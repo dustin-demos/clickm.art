@@ -44,10 +44,11 @@ forEachIcon((icon, path) => {
   const svg = optimize(fs.readFileSync(path, 'utf8'), {
     multipass: true,
     plugins: [
+      'removeDimensions',
       {
         name: 'removeAttrs',
         params: {
-          attrs: '(class|height|width)'
+          attrs: '(class)'
         }
       }
     ]
