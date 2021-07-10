@@ -24,6 +24,7 @@
 
 *:not(svg *) {
   position: relative;
+  min-width: 0; // talk about grids or something
   margin: 0;
   padding: 0;
   border: 0;
@@ -33,7 +34,9 @@
   text-decoration: inherit;
   -webkit-overflow-scrolling: touch; // 1
 
-  &, &::after, &::before {
+  &,
+  &::after,
+  &::before {
     box-sizing: inherit;
   }
 }
@@ -51,7 +54,8 @@ body {
   background-blend-mode: multiply;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
 

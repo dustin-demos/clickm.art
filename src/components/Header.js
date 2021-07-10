@@ -37,7 +37,7 @@ const Navigation = (props, children) => {
   )
 }
 
-const Search = (props, children) => {
+const Search = () => {
   return (
     <div class='header-search'>
       <input type='search' placeholder='Search Clickmart for the Lowest Prices!'/>
@@ -72,7 +72,7 @@ const Banner = () => {
   )
 }
 
-export default (props, children) => {
+export default () => {
   return (
     <div class='header'>
       <div class='header-bar'>

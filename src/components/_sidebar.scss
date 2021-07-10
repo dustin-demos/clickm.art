@@ -30,10 +30,10 @@
   display: grid;
 
   > a {
-    padding: 12px 36px 24px (36px + 24px);
+    padding: 16px 36px 16px (36px + 24px);
 
     &:hover {
-      background: blue;
+      background: var(--light-100);
     }
   }
 }

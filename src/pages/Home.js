@@ -7,11 +7,18 @@ import Toggle from 'ui/Toggle'
 import Carousel from 'components/Carousel'
 import { Collection } from 'components/Collection'
 
+const Advertisement = () => {
+  return (
+    <div class='page-home-advertisement'></div>
+  )
+}
+
 const Home = (state, dispatch) => {
   return (
     <div class='page-home'>
-      <Carousel/>
       <div class='page-home-content'>
+        <Carousel/>
+        <Advertisement/>
         {/* <Collection category='Pools and Water Toys'/> */}
         {/* <Card icon='' title='Electronics'>
           <Product/>

@@ -1,10 +1,46 @@
 
-// .page-home {}
+.page-home {
+  transition: padding 200ms;
+}
 
 .page-home-content {
   display: grid;
   gap: 24px;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: auto;
-  padding: 36px 0 0;
+}
+
+.page-home-advertisement {
+  width: 100%; // kinda silly yeah?
+  min-width: 0;
+  height: 144px;
+  margin: auto;
+  border-radius: 6px;
+  background: var(--light-200) url('https://via.placeholder.com/1440x144') center;
+}
+
+/**
+ * Tablet Screens
+ */
+
+@media (min-width: 768px + 1px) {
+
+}
+
+/**
+ * Laptop Screens
+ */
+
+@media (min-width: 1024px + 1px) {
+
+}
+
+/**
+ * Desktop Screens
+ */
+
+@media (min-width: 1440px + 1px) {
+  .page-home {
+    padding: 36px 0 0;
+  }
 }
