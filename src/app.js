@@ -90,3 +90,20 @@ if (process.env.PROD === true) {
     document.body.appendChild(script)
   })
 }
+
+/**
+ *
+ * Google AdSense
+ *
+ */
+
+if (process.env.PROD === true) {
+  window.addEventListener('load', () => {
+    const script = document.createElement('script')
+
+    script['data-ad-client'] = 'ca-pub-1036438073249007'
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+
+    document.body.appendChild(script)
+  })
+}
