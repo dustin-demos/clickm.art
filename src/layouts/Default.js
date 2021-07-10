@@ -1,28 +1,24 @@
 
-// import cc from 'classcat'
+import cc from 'classcat'
 
-import Panel from 'components/Panel'
-// import Sidebar from 'components/Sidebar'
 import Header from 'components/Header'
+import Panel from 'components/Panel'
+import Sidebar from 'components/Sidebar'
 
 import { dispatch } from 'app'
-import * as common from 'stores/common'
-
-// const toggle = () => {
-//   dispatch(common.toggle, 'sidebar')
-// }
 
 export default (props, children) => state => {
-  // const classList = cc({
-  //   'layout-dashboard': true,
-  //   '-sidebar': state.sidebar
-  // })
+  const classList = cc({
+    'layout-default': true,
+    '-banner': state.common.banner
+  })
 
   return (
-    <div class='layout-default'>
+    <div class={classList}>
       <Header/>
       {children(state, dispatch)}
-      {/* <Panel panel={state.panel}/> */}
+      <Panel/>
+      <Sidebar/>
       {/* <div class='layout-main-content'>
         <div class='layout-main-head'>
           <h1>{props.title}</h1>
@@ -33,7 +29,6 @@ export default (props, children) => state => {
           </div>
         </div>
       </div> */}
-      {/* <Sidebar active={state.sidebar}/> */}
     </div>
   )
 }

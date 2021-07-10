@@ -50,8 +50,8 @@ const collect = (state, render) => {
 const pocket = (state, render) => {
   const push = collect(state, render)
 
-  const dispatch = (action, data) => {
-    const result = action(state, data)
+  const dispatch = (action, foo, bar, baz) => {
+    const result = action(state, foo, bar, baz)
 
     console.log(
       'Dispatch >>',
@@ -70,7 +70,11 @@ const pocket = (state, render) => {
     }
   }
 
-  return dispatch
+  return {
+    state,
+    getState: () => state,
+    dispatch
+  }
 }
 
 /**
@@ -145,7 +149,7 @@ export default (init, patch) => {
     to: '/'
   }
 
-  const dispatch = pocket(init.state, state => {
+  const { getState, dispatch } = pocket(init.state, state => {
     patch(route.view(state, dispatch))
   })
 
@@ -166,5 +170,5 @@ export default (init, patch) => {
   window.addEventListener('pushstate', listener)
   window.addEventListener('popstate', listener)
 
-  return dispatch
+  return { getState, dispatch }
 }

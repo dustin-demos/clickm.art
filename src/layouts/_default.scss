@@ -1,7 +1,11 @@
 
 .layout-default {
-  padding: 144px 0;
-  // transition: padding 200ms;
+  padding: 108px 0;
+  transition: padding 200ms;
+
+  &.-banner {
+    padding: 156px 0;
+  }
 }
 
 // @media (min-width: 1024px + 1px) {

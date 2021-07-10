@@ -1,0 +1,59 @@
+
+.page-subscribe {
+  display: flex;
+  // position: fixed;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  // overflow: overlay;
+
+  > div {
+    min-width: 425px - 36px - 36px;
+    margin: auto;
+    text-align: center;
+
+    > img {
+      width: 144px + 72px + 36px;
+      margin: 18px 36px;
+    }
+  }
+}
+
+.page-subscribe-card {
+  padding: (24px + 150px) 24px 36px;
+  border-radius: 6px;
+  text-align: center;
+  background: #fff url('/cache/icons8-discount-100.png') center 24px / 150px no-repeat;
+
+  > h1 {
+    margin: 18px 0 24px;
+    font: 600 18px/1px var(--font-inter);
+  }
+}
+
+.page-subscribe-form {
+  display: grid;
+  gap: 12px;
+
+  > input {
+    height: 42px;
+    border: 2px solid var(--light-300);
+    border-radius: 6px;
+    font: 14px/1 var(--font-inter);
+    background: transparent;
+    transition:
+      border-color 200ms,
+      box-shadow 200ms;
+
+    &:focus {
+      border-color: var(--blue, red);
+      outline: none;
+      box-shadow: 0 0 0 6px rgba(var(--blue-rgb), 0.25);
+    }
+  }
+
+  > button {
+    margin: auto;
+  }
+}

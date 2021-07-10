@@ -1,13 +1,14 @@
 
 import cc from 'classcat'
-import Toggle from 'ui/Toggle'
+
+import { getState, dispatch } from 'app'
+import * as $common from 'stores/common'
+import * as $panel from 'stores/panel'
 
 import css from 'modules/css-concat'
 import once from 'modules/run-once'
 
-import { dispatch } from 'app'
-import * as common from 'stores/common'
-import * as panel from 'stores/panel'
+import Toggle from 'ui/Toggle'
 
 const onMounted = once()
 
@@ -18,29 +19,29 @@ const onMounted = once()
  */
 
 const dragStart = event => {
-  dispatch(panel.setOffset, [
+  dispatch($panel.setOffset, [
     event.offsetX,
     event.offsetY
   ])
 }
 
 const dragEnd = event => {
-  dispatch(panel.setPosition, [
+  dispatch($panel.setPosition, [
     event.clientX,
     event.clientY
   ])
 }
 
 const togglePanel = () => {
-  dispatch(panel.toggle)
+  dispatch($panel.toggle)
+}
+
+const toggleBanner = () => {
+  dispatch($common.toggle, 'banner')
 }
 
 const toggleSidebar = () => {
-  dispatch(common.toggle, 'sidebar')
-}
-
-const toggleFlashbang = () => {
-  dispatch(common.toggle, 'flashbang')
+  dispatch($common.toggle, 'sidebar')
 }
 
 /**
@@ -52,9 +53,8 @@ const toggleFlashbang = () => {
 const Setting = props => {
   return (
     <div>
-      <span>{props.off}</span>
+      <span>{props.label}</span>
       <Toggle active={props.active} onClick={props.onClick}/>
-      <span>{props.on}</span>
     </div>
   )
 }
@@ -66,28 +66,30 @@ const Setting = props => {
  */
 
 export default props => {
+  const { common, panel } = getState()
+
   const ref = { vnode: null }
-  const [x, y] = props.panel.position
+  const [x, y] = panel.position
 
   const style = css({
-    '--height': props.panel.height,
+    '--height': panel.height,
     'top': y + 'px',
     'left': x + 'px'
   })
 
   const panelClass = cc([
     'component-panel',
-    props.panel.active && '-active'
+    panel.active && '-active'
   ])
 
   const settingsClass = cc([
     'component-panel-settings',
-    props.panel.active && '-active'
+    panel.active && '-active'
   ])
 
   onMounted(() => {
     const height = ref.vnode.node.offsetHeight
-    dispatch(panel.setHeight, height + 'px')
+    dispatch($panel.setHeight, height + 'px')
   })
 
   return (
@@ -95,16 +97,14 @@ export default props => {
       <h1>Developer Panel</h1>
       <div class={settingsClass}>
         <Setting
-          off='Default'
-          on='Flashbang'
-          active={props.flashbang}
-          onClick={toggleFlashbang}
+          label='Toggle Banner'
+          active={common.banner}
+          onClick={toggleBanner}
         />
         <hr/>
         <Setting
-          off='Sidebar Closed'
-          on='Sidebar Open'
-          active={props.sidebar}
+          label='Toggle Sidebar'
+          active={common.sidebar}
           onClick={toggleSidebar}
         />
       </div>

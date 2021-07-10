@@ -1,6 +1,6 @@
 
 import cc from 'classcat'
-import Link from 'ui/Link'
+import LinkButton from 'ui/LinkButton'
 
 const slides = [
   {
@@ -36,7 +36,7 @@ const Card = (props, children) => {
         <div class='carousel-info'>
           <h1>{props.title}</h1>
           <h2>{props.tagline}</h2>
-          <Link to='/shop' class='-button -border -round'>Shop Now</Link>
+          <LinkButton to='/shop' class='-ic-basket -border -round'>Shop Now</LinkButton>
         </div>
       </div>
     </div>

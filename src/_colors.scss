@@ -42,6 +42,10 @@ $dark-100: lab(30, 0, -10);
   --blue: #{$blue};
   --purple: #{$purple};
 
+  /* Destructured Colors */
+  --blue-rgb: #{destructure-color($blue)};
+  --red-rgb: #{destructure-color($red)};
+
   /* Theme Colors */
   --primary: var(--blue);
   --midnight: #{$midnight};

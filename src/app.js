@@ -8,6 +8,7 @@ import * as panel from 'stores/panel'
 import Home from 'pages/Home'
 import Foobar from 'pages/Foobar'
 import Market from 'pages/Market'
+import Subscribe from 'pages/Subscribe'
 import Missing from 'pages/Missing'
 
 /**
@@ -19,7 +20,7 @@ import Missing from 'pages/Missing'
 const node = document.getElementById('app')
 const app = init => pocket(init, view => patch(node, view))
 
-export const dispatch = app({
+export const { getState, dispatch } = app({
   state: {
     common: common.state,
     panel: panel.state,
@@ -62,6 +63,7 @@ export const dispatch = app({
     '/': Home,
     '/foobar': Foobar,
     '/market': Market,
+    '/subscribe': Subscribe,
     '/missing': Missing
   }
 })

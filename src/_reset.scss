@@ -7,6 +7,10 @@
  *
  */
 
+::placeholder {
+  color: var(--light-600, red);
+}
+
 ::-webkit-scrollbar {
   width: 18px;
   height: 18px;
@@ -15,10 +19,11 @@
 ::-webkit-scrollbar-thumb {
   border: 6px solid transparent;
   border-radius: 9px;
-  box-shadow: inset 0 0 0 3px var(--primary);
+  box-shadow: inset 0 0 0 3px var(--primary, red);
 }
 
 *:not(svg *) {
+  position: relative;
   margin: 0;
   padding: 0;
   border: 0;
@@ -40,8 +45,10 @@ html {
 }
 
 body {
-  font: 400 1em/1 var(--font-inter);
-  background: var(--background, red);
+  min-height: 100vh;
+  font: 400 1em/1 var(--font-inter, sans-serif);
+  background: var(--light-100, red) url('/cache/geometry2.png');
+  background-blend-mode: multiply;
 }
 
 a, button {

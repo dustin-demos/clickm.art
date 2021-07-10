@@ -1,6 +1,31 @@
 
 import cc from 'classcat'
+
+import { getState, dispatch } from 'app'
+import * as $common from 'stores/common'
+
+import css from 'modules/css-concat'
+import once from 'modules/run-once'
+
 import Link from 'ui/Link'
+
+const onMounted = once()
+
+/**
+ *
+ * Event Handlers
+ *
+ */
+
+const toggleBanner = () => {
+  dispatch($common.toggle, 'banner')
+}
+
+/**
+ *
+ * Components
+ *
+ */
 
 const Navigation = (props, children) => {
   return (
@@ -15,8 +40,34 @@ const Navigation = (props, children) => {
 const Search = (props, children) => {
   return (
     <div class='header-search'>
-      <input type='search'/>
-      <button>Search</button>
+      <input type='search' placeholder='Search Clickmart for the Lowest Prices!'/>
+      <button alt='Search'></button>
+    </div>
+  )
+}
+
+const Banner = () => {
+  const { common } = getState()
+  const ref = { vnode: null }
+
+  const style = css({
+    '--height': common.bannerHeight
+  })
+
+  const classList = cc([
+    'header-banner',
+    common.banner && '-active'
+  ])
+
+  onMounted(() => {
+    const height = ref.vnode.node.offsetHeight
+    dispatch($common.set, 'bannerHeight', height + 'px')
+  })
+
+  return (
+    ref.vnode = <div class={classList} style={style}>
+      <Link to='/subscribe'>Click Here to Subscribe to Our Price Drop Alerts!</Link>
+      <button onclick={toggleBanner}></button>
     </div>
   )
 }
@@ -28,9 +79,7 @@ export default (props, children) => {
         <Navigation/>
         <Search/>
       </div>
-      <div class='header-banner'>
-        <Link to='/learn-more'>Learn more</Link> about our partners that power this store!
-      </div>
+      <Banner/>
     </div>
   )
 }

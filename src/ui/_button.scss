@@ -1,19 +1,33 @@
 
+$icon-map: (
+  'ic-basket': ic-basket(#fff)
+);
+
 .ui-button {
-  // height: 42px;
+  appearance: button;
+  display: inline-block;
   padding: 0 24px;
-  // border-radius: 9px;
+  border-radius: 6px;
   color: #fff;
-  font: 14px/48px var(--font-inter);
+  font: 14px/42px var(--font-inter);
   text-align: center;
   white-space: nowrap;
+  background: var(--blue, red);
 
   &.-border {
     border: 2px solid #fff;
-    font: 16px/44px var(--font-inter);
+    font: 16px/38px var(--font-inter);
+    background: initial;
   }
 
   &.-round {
-    border-radius: 24px;
+    border-radius: 21px;
+  }
+
+  @each $key, $value in $icon-map {
+    &.-#{$key} {
+      padding: 0 24px 0 (12px + 24px + 9px);
+      background: url('#{$value}') 12px center / 24px no-repeat;
+    }
   }
 }

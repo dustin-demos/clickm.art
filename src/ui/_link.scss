@@ -1,11 +1,11 @@
 
 .ui-link {
-  font: 14px/48px var(--font-inter);
   white-space: nowrap;
 
   &.-button {
     display: inline-block;
     padding: 0 24px;
+    font: 14px/48px var(--font-inter);
   }
 
   &.-border {

@@ -5,8 +5,8 @@ export default (props, children) => {
   const button = cc(['ui-button', props.class])
 
   return (
-    <div class={button}>
+    <button class={button}>
       {children}
-    </div>
+    </button>
   )
 }
