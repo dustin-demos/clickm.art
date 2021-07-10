@@ -1,0 +1,22 @@
+
+.ui-input {
+  display: grid;
+  gap: 12px;
+
+  > span {
+    color: var(--light-400, red);
+  }
+
+  > input {
+    height: 42px;
+    border: 2px solid var(--light-200, red);
+    border-radius: 6px;
+    text-indent: 18px;
+    transition: border-color 100ms;
+
+    &:focus {
+      border-color: var(--blue, red);
+      outline: none;
+    }
+  }
+}

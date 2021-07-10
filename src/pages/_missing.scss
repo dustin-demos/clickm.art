@@ -1,0 +1,11 @@
+
+.page-register {
+  min-height: 50vh;
+  background: #fff;
+}
+
+@media (min-width: 1440px + 1px) {
+  .page-register {
+    border-radius: 6px;
+  }
+}

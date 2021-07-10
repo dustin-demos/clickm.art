@@ -4,6 +4,9 @@
     "stylelint-order"
   ],
   "rules": {
+    "selector-combinator-space-after": "always",
+    "selector-combinator-space-before": "always",
+
     "at-rule-empty-line-before": [
       "always",
       {

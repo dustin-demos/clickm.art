@@ -1,7 +1,5 @@
 
-.page-home {
-  transition: padding 200ms;
-}
+// .page-home {}
 
 .page-home-content {
   display: grid;
@@ -41,6 +39,5 @@
 
 @media (min-width: 1440px + 1px) {
   .page-home {
-    padding: 36px 0 0;
   }
 }

@@ -1,0 +1,30 @@
+
+.page-login {
+  display: flex;
+  color: var(--midnight, red);
+}
+
+.page-login-card {
+  width: 425px;
+  margin: auto;
+  padding: 36px;
+  border-radius: 6px;
+  background: #fff;
+
+  > h1 {
+    padding: 0 0 24px;
+    font: 800 42px/1 var(--font-mont);
+    text-align: center;
+  }
+
+  > form {
+    display: grid;
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1440px + 1px) {
+  .page-login {
+    border-radius: 6px;
+  }
+}

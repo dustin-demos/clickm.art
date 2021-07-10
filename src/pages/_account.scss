@@ -1,0 +1,11 @@
+
+.page-account {
+  min-height: 50vh;
+  background: #fff;
+}
+
+@media (min-width: 1440px + 1px) {
+  .page-account {
+    border-radius: 6px;
+  }
+}

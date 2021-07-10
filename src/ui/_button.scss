@@ -3,25 +3,31 @@ $icon-map: (
   'ic-basket': ic-basket(#fff)
 );
 
+$icon-login: ic-key(#fff);
+
 .ui-button {
-  appearance: button;
-  display: inline-block;
+  // appearance: button;
+  // display: inline-block;
   padding: 0 24px;
   border-radius: 6px;
   color: #fff;
-  font: 14px/42px var(--font-inter);
+  font: 16px/42px var(--font-inter);
   text-align: center;
   white-space: nowrap;
   background: var(--blue, red);
 
-  &.-border {
-    border: 2px solid #fff;
-    font: 16px/38px var(--font-inter);
-    background: initial;
+  &.-login {
+    // margin: 0 auto 0 0;
+    margin: 0 0 0 auto;
+    padding: 0 24px 0 (12px + 24px + 12px);
+    background: var(--red, red) url($icon-login) 12px center / 24px no-repeat;
   }
 
-  &.-round {
+  &.-carousel {
+    border: 2px solid #fff;
     border-radius: 21px;
+    font: 16px/38px var(--font-inter);
+    background: initial;
   }
 
   @each $key, $value in $icon-map {

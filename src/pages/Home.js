@@ -17,7 +17,7 @@ const Home = (state, dispatch) => {
   return (
     <div class='page-home'>
       <div class='page-home-content'>
-        <Carousel/>
+        {/* <Carousel/> */}
         <Advertisement/>
         {/* <Collection category='Pools and Water Toys'/> */}
         {/* <Card icon='' title='Electronics'>

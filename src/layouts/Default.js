@@ -1,5 +1,5 @@
 
-import cc from 'classcat'
+// import cc from 'classcat'
 
 import Header from 'components/Header'
 import Panel from 'components/Panel'
@@ -8,15 +8,19 @@ import Sidebar from 'components/Sidebar'
 import { dispatch } from 'app'
 
 export default (props, children) => state => {
-  const classList = cc({
-    'layout-default': true,
-    '-banner': state.common.banner
-  })
+  // const classList = cc([
+  //   'layout-default',
+  //   state.common.banner && '-banner'
+  // ])
 
   return (
-    <div class={classList}>
+    <div class='layout-default'>
       <Header/>
-      {children(state, dispatch)}
+      <div class='layout-default-content'>
+        <div>
+          {children(state, dispatch)}
+        </div>
+      </div>
       <Panel/>
       <Sidebar/>
       {/* <div class='layout-main-content'>

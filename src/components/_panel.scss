@@ -1,5 +1,5 @@
 
-$icon-close: ic-circle-x($red);
+$icon-x: ic-x($red);
 
 /**
  *
@@ -9,11 +9,11 @@ $icon-close: ic-circle-x($red);
 
 .component-panel {
   position: fixed;
-  height: 36px + 16px + 36px;
-  padding: 36px;
-  border-radius: 24px;
+  height: 24px + 16px + 24px;
+  padding: 24px;
+  border-radius: 12px;
   color: #fff;
-  white-space: nowrap; // important
+  white-space: nowrap;
   overflow: hidden;
   background: var(--midnight, red);
   transition: height 200ms;
@@ -21,14 +21,14 @@ $icon-close: ic-circle-x($red);
 
 .component-panel > button {
   position: absolute;
-  top: 36px - 9px;
-  right: 36px - 9px;
+  top: 24px - 9px;
+  right: 24px - 9px;
   padding: 18px;
-  background: url($icon-close) center / 24px no-repeat;
+  background: url($icon-x) center / 24px no-repeat;
 }
 
 .component-panel > h1 {
-  padding: 0 0 36px;
+  padding: 0 0 24px;
   font: 600 16px/1 var(--font-inter);
 }
 

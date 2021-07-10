@@ -31,8 +31,8 @@ const Navigation = (props, children) => {
   return (
     <nav class='header-navigation'>
       <Link to='/' icon='-menu-2' alt='Menu'>Menu</Link>
-      <Link to='/' icon='-user' alt='Account'>Account</Link>
-      <Link to='/' icon='-shopping-cart' alt='Cart'>Cart</Link>
+      <Link to='/account' icon='-user' alt='Account'>Account</Link>
+      <Link to='/cart' icon='-shopping-cart' alt='Cart'>Cart</Link>
     </nav>
   )
 }

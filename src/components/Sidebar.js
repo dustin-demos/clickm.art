@@ -58,11 +58,6 @@ export default () => {
       <Overlay active={common.sidebar}/>
       <div class={classList}>
         <Link to='/'>logo</Link>
-        <h2>Clickmart</h2>
-        <nav class='component-sidebar-nav'>
-          <Link to='/orders' icon='ic-dashboard'>Orders</Link>
-          <Link to='/lists' icon='ic-tag'>Lists</Link>
-        </nav>
         <h2>Departments</h2>
         <nav class='component-sidebar-nav'>
           <Link to='/' icon='ic-insights'>Insights</Link>
@@ -72,8 +67,9 @@ export default () => {
         </nav>
         <h2>Account</h2>
         <nav class='component-sidebar-nav'>
+          <Link to='/lists' icon='ic-tag'>Lists</Link>
+          <Link to='/orders' icon='ic-dashboard'>Orders</Link>
           <Link to='/settings' icon='ic-insights'>Settings</Link>
-          <Link to='/customer-service' icon='ic-lightbulb'>Customer Service</Link>
           <Link to='/sign-out' icon='ic-explore'>Sign Out</Link>
         </nav>
       </div>

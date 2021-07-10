@@ -36,7 +36,7 @@ const Card = (props, children) => {
         <div class='carousel-info'>
           <h1>{props.title}</h1>
           <h2>{props.tagline}</h2>
-          <LinkButton to='/shop' class='-ic-basket -border -round'>Shop Now</LinkButton>
+          <LinkButton to='/shop' class='-ic-basket -carousel'>Shop Now</LinkButton>
         </div>
       </div>
     </div>

@@ -6,10 +6,13 @@ import * as common from 'stores/common'
 import * as panel from 'stores/panel'
 
 import Home from 'pages/Home'
+import Account from 'pages/Account'
 import Foobar from 'pages/Foobar'
+import Login from 'pages/Login'
 import Market from 'pages/Market'
-import Subscribe from 'pages/Subscribe'
 import Missing from 'pages/Missing'
+import Register from 'pages/Register'
+import Subscribe from 'pages/Subscribe'
 
 /**
  *
@@ -61,10 +64,13 @@ export const { getState, dispatch } = app({
   },
   pages: {
     '/': Home,
+    '/account': Account,
     '/foobar': Foobar,
+    '/login': Login,
     '/market': Market,
-    '/subscribe': Subscribe,
-    '/missing': Missing
+    '/missing': Missing,
+    '/register': Register,
+    '/subscribe': Subscribe
   }
 })
 
