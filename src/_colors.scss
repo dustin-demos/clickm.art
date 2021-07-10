@@ -1,0 +1,90 @@
+
+$white: #fff;
+$black: #000;
+
+/* Colors */
+$red: lab(55, 63, 15); // $red: lab(50, 63, 23);
+$orange: lab(60, 39, 55);
+$yellow: lab(70, 15, 63);
+$green: lab(60, -32, 0);
+$blue: lab(50, -48, -64); // $blue: lab(50, 0, -64);
+$purple: lab(40, 55, -64);
+
+/* Theme */
+$primary: $blue;
+$midnight: lab(5, -8, -15);
+
+/* Desaturated Light */
+$light-600: lab(70, 0, -10);
+$light-500: lab(75, 0, -9);
+$light-400: lab(80, 0, -8);
+$light-300: lab(85, 0, -7);
+$light-200: lab(90, 0, -6);
+$light-100: lab(95, 0, -5);
+
+/* Desaturated Dark */
+$dark-600: lab(5, 0, -5);
+$dark-500: lab(10, 0, -6);
+$dark-400: lab(15, 0, -7);
+$dark-300: lab(20, 0, -8);
+$dark-200: lab(25, 0, -9);
+$dark-100: lab(30, 0, -10);
+
+:root {
+  --white: #{$white};
+  --black: #{$black};
+
+  /* Colors */
+  --red: #{$red};
+  --orange: #{$orange};
+  --yellow: #{$yellow};
+  --green: #{$green};
+  --blue: #{$blue};
+  --purple: #{$purple};
+
+  /* Theme Colors */
+  --primary: var(--blue);
+  --midnight: #{$midnight};
+  --midnight-rgb: #{destructure-color($midnight)};
+
+  /* Desaturated Light */
+  --light-600: #{$light-600};
+  --light-500: #{$light-500};
+  --light-400: #{$light-400};
+  --light-300: #{$light-300};
+  --light-200: #{$light-200};
+  --light-100: #{$light-100};
+
+  /* Desaturated Dark */
+  --dark-600: #{$dark-600};
+  --dark-500: #{$dark-500};
+  --dark-400: #{$dark-400};
+  --dark-300: #{$dark-300};
+  --dark-200: #{$dark-200};
+  --dark-100: #{$dark-100};
+
+  /* Fonts */
+  --font-inter: 'Inter', sans-serif;
+  --font-source-code-pro: 'Source Code Pro', monospace;
+}
+
+body {
+  /* Common */
+  --background: var(--light-100);
+
+  /* Header */
+  --header-bar-background: var(--midnight);
+  --header-banner-background: var(--blue);
+
+  /* Card */
+  --card-text-primary: var(--black);
+  --card-background: var(--white);
+
+  /* Sidebar */
+  --sidebar-link-background: var(--dark-300);
+  --sidebar-background: var(--dark-500);
+
+  /* Text */
+  --text-primary: var(--light-100);
+  --text-secondary: var(--light-300);
+}

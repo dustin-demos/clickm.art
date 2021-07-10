@@ -1,0 +1,118 @@
+
+// .carousel {}
+
+.carousel-scroll {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow-x: overlay;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  > div {
+    min-width: 100%;
+    scroll-snap-align: start;
+  }
+}
+
+.carousel-content {
+  flex: 1;
+  display: flex;
+  color: #fff;
+  white-space: pre-wrap;
+}
+
+.carousel-info {
+  // margin: auto 0;
+  padding: 36px;
+
+  > h1 {
+    font: 900 36px/1 var(--font-inter);
+  }
+
+  > h2 {
+    margin: 24px 0;
+    font: 18px/24px var(--font-inter);
+  }
+}
+
+.carousel-image {
+  padding: 0 0 75%;
+}
+
+// .carousel-controls {
+//   display: flex;
+//   gap: 12px;
+//   height: 36px;
+//   padding: 0 12px;
+//   border-radius: 6px;
+//   background: var(--midnight, red);
+//
+//   > button {
+//     width: 6px;
+//     height: 6px;
+//     margin: auto;
+//     border-radius: 3px;
+//     background: var(--white, red);
+//   }
+// }
+
+/**
+ *
+ * Tablet Screens
+ *
+ */
+
+@media (min-width: 768 + 1px) {
+  .carousel-scroll {
+    > div {
+      display: flex;
+      flex-flow: row-reverse;
+    }
+  }
+
+  .carousel-content {
+    flex: 2;
+  }
+
+  .carousel-image {
+    flex: 3;
+    padding: 0 0 (100% - ((2 / 3) * 100));
+  }
+}
+
+/**
+ *
+ * Laptop Screens
+ *
+ */
+
+@media (min-width: 1024px + 1px) {
+  .carousel-info {
+    padding: 48px;
+
+    > h1 {
+      font: 900 48px/1 var(--font-inter);
+    }
+
+    > h2 {
+      font: 24px/36px var(--font-inter);
+    }
+  }
+}
+
+/**
+ *
+ * Desktop Screens
+ *
+ */
+
+@media (min-width: 1440px + 1px) {
+  .carousel {
+    padding: 48px 0 0;
+  }
+
+  .carousel-scroll {
+    border-radius: 6px;
+  }
+}

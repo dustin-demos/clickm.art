@@ -1,0 +1,73 @@
+
+$icon-map: (
+  'menu-2': ic-menu-2(#fff),
+  'shopping-cart': ic-shopping-cart(#fff),
+  'user': ic-user(#fff),
+);
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.header-bar {
+  background: var(--header-bar-background, red);
+}
+
+.header-navigation {
+  display: grid;
+  grid: auto / 1fr auto auto;
+  gap: 24px;
+  padding: 0 12px;
+  color: var(--white, red);
+
+  > a {
+    @each $key, $icon in $icon-map {
+      &.-#{$key} {
+        padding: 0 0 0 (24px + 12px);
+        background: url($icon) 0 center  / 24px no-repeat;
+      }
+    }
+  }
+}
+
+.header-search {
+  display: flex;
+  place-content: center;
+  padding: 0 12px 18px (24px + 36px + 12px);
+  background: url('/cache/logo.svg') 12px 12px / auto 24px no-repeat;
+
+  > button, > input {
+    height: 42px;
+  }
+
+  > button {
+    padding: 0 12px;
+    border-radius: 0 6px 6px 0;
+    color: var(--white);
+    background: var(--red);
+  }
+
+  > input {
+    width: 768px;
+    min-width: 0;
+    padding: 0 12px 0 0;
+    border-radius: 6px 0 0 6px;
+    text-indent: 12px;
+  }
+}
+
+.header-banner {
+  height: 48px;
+  color: #fff;
+  font: 14px/1 var(--font-inter);
+  text-align: center;
+  background: var(--header-banner-background, red);
+
+  > a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

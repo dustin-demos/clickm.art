@@ -1,0 +1,19 @@
+
+.ui-button {
+  // height: 42px;
+  padding: 0 24px;
+  // border-radius: 9px;
+  color: #fff;
+  font: 14px/48px var(--font-inter);
+  text-align: center;
+  white-space: nowrap;
+
+  &.-border {
+    border: 2px solid #fff;
+    font: 16px/44px var(--font-inter);
+  }
+
+  &.-round {
+    border-radius: 24px;
+  }
+}
