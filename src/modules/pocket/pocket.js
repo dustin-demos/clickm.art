@@ -50,8 +50,8 @@ const collect = (state, render) => {
 const pocket = (state, render) => {
   const push = collect(state, render)
 
-  const dispatch = (action, foo, bar, baz) => {
-    const result = action(state, foo, bar, baz)
+  const dispatch = (action, ...data) => {
+    const result = action(state, ...data)
 
     console.log(
       'Dispatch >>',

@@ -107,6 +107,31 @@ export default props => {
           active={common.sidebar}
           onClick={toggleSidebar}
         />
+        <hr/>
+      </div>
+      <div class='component-panel-palette'>
+        <div class='-red'></div>
+        <div class='-orange'></div>
+        <div class='-yellow'></div>
+        <div class='-green'></div>
+        <div class='-blue'></div>
+        <div class='-purple'></div>
+      </div>
+      <div class='component-panel-palette'>
+        <div class='-dark-600'></div>
+        <div class='-dark-500'></div>
+        <div class='-dark-400'></div>
+        <div class='-dark-300'></div>
+        <div class='-dark-200'></div>
+        <div class='-dark-100'></div>
+      </div>
+      <div class='component-panel-palette'>
+        <div class='-light-600'></div>
+        <div class='-light-500'></div>
+        <div class='-light-400'></div>
+        <div class='-light-300'></div>
+        <div class='-light-200'></div>
+        <div class='-light-100'></div>
       </div>
       <button alt='Toggle Developer Panel' onclick={togglePanel}></button>
     </div>

@@ -1,5 +1,5 @@
 
-$icon-x: ic-x($red);
+$icon-x: ic-x(#fff);
 
 /**
  *
@@ -15,7 +15,7 @@ $icon-x: ic-x($red);
   color: #fff;
   white-space: nowrap;
   overflow: hidden;
-  background: var(--midnight, red);
+  background: var(--dark-500, red);
   transition: height 200ms;
 }
 
@@ -64,4 +64,49 @@ $icon-x: ic-x($red);
 
 .component-panel-settings.-active {
   opacity: 1;
+}
+
+/**
+ *
+ * Component Panel Palette
+ *
+ */
+
+$colors: (
+  'red': $red,
+  'orange': $orange,
+  'yellow': $yellow,
+  'green': $green,
+  'blue': $blue,
+  'purple': $purple,
+  //
+  'light-600': $light-600,
+  'light-500': $light-500,
+  'light-400': $light-400,
+  'light-300': $light-300,
+  'light-200': $light-200,
+  'light-100': $light-100,
+  //
+  'dark-600': $dark-600,
+  'dark-500': $dark-500,
+  'dark-400': $dark-400,
+  'dark-300': $dark-300,
+  'dark-200': $dark-200,
+  'dark-100': $dark-100
+);
+
+.component-panel-palette {
+  display: flex;
+  padding: 12px 0 0;
+
+  > div {
+    flex: 1;
+    height: 24px;
+
+    @each $key, $value in $colors {
+      &.-#{$key} {
+        background: $value;
+      }
+    }
+  }
 }

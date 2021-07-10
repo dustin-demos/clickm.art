@@ -5,7 +5,7 @@ import Card from 'ui/Card'
 import Toggle from 'ui/Toggle'
 
 import Carousel from 'components/Carousel'
-import { Collection } from 'components/Collection'
+import Collection from 'components/Collection'
 
 const Advertisement = () => {
   return (

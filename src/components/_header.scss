@@ -24,7 +24,7 @@ $icon-x: ic-x(#fff);
 }
 
 .header-bar {
-  background: var(--header-bar-background, red);
+  background: var(--dark-500, red);
 }
 
 .header-navigation {
@@ -35,11 +35,11 @@ $icon-x: ic-x(#fff);
   color: var(--white, red);
 
   > a {
+    padding: 0 0 0 (24px + 12px);
     font: 14px/48px var(--font-inter);
 
     @each $key, $icon in $icon-map {
       &.-#{$key} {
-        padding: 0 0 0 (24px + 12px);
         background: url($icon) 0 center  / 24px no-repeat;
       }
     }

@@ -1,4 +1,16 @@
 
+$icon-map: (
+  'icon-pizza': ic-pizza($dark-100),
+  'icon-ripple': ic-ripple($dark-100),
+  'icon-leaf': ic-leaf($dark-100),
+  'icon-devices': ic-devices($dark-100),
+  //
+  'icon-gift': ic-gift($dark-100),
+  'icon-receipt': ic-receipt($dark-100),
+  'icon-settings': ic-settings($dark-100),
+  'icon-power': ic-power($dark-100)
+);
+
 // .component-sidebar {}
 
 .component-sidebar-menu,
@@ -30,10 +42,16 @@
   display: grid;
 
   > a {
-    padding: 16px 36px 16px (36px + 24px);
+    padding: 16px 36px 16px (36px + 24px + 12px);
+
+    @each $key, $icon in $icon-map {
+      &.-#{$key} {
+        background: url($icon) 36px center / 24px no-repeat;
+      }
+    }
 
     &:hover {
-      background: var(--light-100);
+      background-color: var(--light-100, red);
     }
   }
 }
@@ -41,7 +59,7 @@
 .component-sidebar-overlay {
   right: 0;
   opacity: 0;
-  background: rgba(var(--midnight-rgb), 0.5);
+  background: rgba(var(--dark-600-rgb, 255, 0, 0), 0.5);
   pointer-events: none;
   transition: opacity 200ms;
 

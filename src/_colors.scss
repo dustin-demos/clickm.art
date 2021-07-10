@@ -23,12 +23,12 @@ $light-200: lab(90, 0, -6);
 $light-100: lab(95, 0, -5);
 
 /* Desaturated Dark */
-$dark-600: lab(5, 0, -5);
-$dark-500: lab(10, 0, -6);
-$dark-400: lab(15, 0, -7);
-$dark-300: lab(20, 0, -8);
-$dark-200: lab(25, 0, -9);
-$dark-100: lab(30, 0, -10);
+$dark-600: lab(5, -15, -20);
+$dark-500: lab(10, -10, -20);
+$dark-400: lab(15, -5, -20);
+$dark-300: lab(20, 0, -20);
+$dark-200: lab(30, 0, -20);
+$dark-100: lab(40, 0, -20);
 
 :root {
   --white: #{$white};
@@ -43,13 +43,12 @@ $dark-100: lab(30, 0, -10);
   --purple: #{$purple};
 
   /* Destructured Colors */
+  --dark-600-rgb: #{destructure-color($dark-600)};
   --blue-rgb: #{destructure-color($blue)};
   --red-rgb: #{destructure-color($red)};
 
   /* Theme Colors */
   --primary: var(--blue);
-  --midnight: #{$midnight};
-  --midnight-rgb: #{destructure-color($midnight)};
 
   /* Desaturated Light */
   --light-600: #{$light-600};
@@ -73,23 +72,23 @@ $dark-100: lab(30, 0, -10);
   --font-source-code-pro: 'Source Code Pro', monospace;
 }
 
-body {
-  /* Common */
-  --background: var(--light-100);
-
-  /* Header */
-  --header-bar-background: var(--midnight);
-  --header-banner-background: var(--blue);
-
-  /* Card */
-  --card-text-primary: var(--black);
-  --card-background: var(--white);
-
-  /* Sidebar */
-  --sidebar-link-background: var(--dark-300);
-  --sidebar-background: var(--dark-500);
-
-  /* Text */
-  --text-primary: var(--light-100);
-  --text-secondary: var(--light-300);
-}
+// body {
+//   /* Common */
+//   --background: var(--light-100);
+//
+//   /* Header */
+//   --header-bar-background: var(--midnight);
+//   --header-banner-background: var(--blue);
+//
+//   /* Card */
+//   --card-text-primary: var(--black);
+//   --card-background: var(--white);
+//
+//   /* Sidebar */
+//   --sidebar-link-background: var(--dark-300);
+//   --sidebar-background: var(--dark-500);
+//
+//   /* Text */
+//   --text-primary: var(--light-100);
+//   --text-secondary: var(--light-300);
+// }

@@ -60,7 +60,7 @@ const Product = (props, children) => {
   )
 }
 
-export const Collection = (props, children) => {
+export default (props, children) => {
   const target = products[props.category].map(item => (
     <Product title={item.title} price={item.price} images={item.images}/>
   ))

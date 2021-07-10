@@ -2,19 +2,17 @@
 .ui-link {
   white-space: nowrap;
 
-  &.-button {
+  &.-logo {
+    background: url('/cache/logo-temp-1.png') center;
+  }
+
+  &.-carousel {
     display: inline-block;
     padding: 0 24px;
-    font: 14px/48px var(--font-inter);
-  }
-
-  &.-border {
     border: 2px solid #fff;
-    color: #fff;
-    font: 16px/44px var(--font-inter);
-  }
-
-  &.-round {
     border-radius: 24px;
+    color: #fff;
+    font: 14px/48px var(--font-inter);
+    font: 16px/44px var(--font-inter);
   }
 }

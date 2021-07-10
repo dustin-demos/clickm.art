@@ -2,7 +2,7 @@
 export const state = {
   banner: true,
   bannerHeight: 'auto',
-  sidebar: false
+  sidebar: true
 }
 
 export const toggle = ({ common }, key) => {
