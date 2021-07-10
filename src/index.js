@@ -30,9 +30,9 @@ const render = data => {
 }
 
 const options = {
-  title: 'Onclick Insights | Instagram Analytics for Business',
-  author: 'Dustin Dowell',
-  description: 'Instagram Analytics for Business',
+  title: 'Clickmart! | Find the lowest pricest on a great selection of every day items.',
+  author: 'CLICKMART LLC',
+  description: 'Find the lowest pricest on a great selection of every day items.',
   viewport: 'width=device-width,maximum-scale=5'
 }
 
