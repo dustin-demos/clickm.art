@@ -83,7 +83,7 @@ if (process.env.PROD === true) {
     const script = document.createElement('script')
 
     script.id = 'gtm'
-    script.src = 'https://googletagmanager.com/gtm.js?id='
+    script.src = 'https://googletagmanager.com/gtm.js?id=GTM-WVH48JK'
 
     document.body.appendChild(script)
   })
