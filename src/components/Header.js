@@ -35,7 +35,7 @@ const Primary = () => {
   return (
     <div class='component-header-primary'>
       <button onclick={toggleSidebar}></button>
-      <h1>CLICKMART</h1>
+      <Link to='/'>CLICKMART</Link>
     </div>
   )
 }
@@ -52,7 +52,7 @@ const Navigation = () => {
 const Search = () => {
   return (
     <div class='component-header-search'>
-      <input type='search' placeholder='Search here for the lowest prices!'/>
+      <input type='search' placeholder='Search products'/>
       <button alt='Search'></button>
     </div>
   )

@@ -19,5 +19,9 @@ export default (props, content) => {
     })
   }
 
-  return <a class={classList} href={props.to} onclick={to}>{content}</a>
+  return (
+    <a class={classList} href={props.to} onclick={to}>
+      <span>{content}</span>
+    </a>
+  )
 }

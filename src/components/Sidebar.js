@@ -53,7 +53,7 @@ export default () => {
     <div class='component-sidebar'>
       <Overlay active={common.sidebar}/>
       <div class={classList}>
-        <Link to='/' class='-logo'>Clickmart</Link>
+        <Link to='/'>CLICKMART</Link>
         <h2>Departments</h2>
         <nav class='component-sidebar-nav'>
           <Link to='/department/popular' icon='-icon-star'>Popular</Link>

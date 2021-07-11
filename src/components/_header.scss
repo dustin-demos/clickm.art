@@ -21,35 +21,35 @@ $icon-x: ic-x(#fff);
 
 .component-header-bar {
   display: grid;
-  grid: auto / auto 1fr auto;
+  grid: 72px / auto 1fr auto;
   background: var(--dark-500, red);
-  transition: grid-template-rows 2s, grid-template-columns, order 2s;
 }
 
 .component-header-primary {
   display: flex;
 
   > button {
-    width: 72px;
-    height: 72px;
+    width: (12px + 24px + 12px);
     background: url($icon-menu-2) center / 24px no-repeat;
   }
 
-  > h1 {
-    font: 800 24px/72px var(--font-mont);
+  > a {
+    padding: 3px 0 0;
+    font: 800 24px/1 var(--font-mont);
   }
 }
 
 .component-header-navigation {
   display: flex;
+  place-content: flex-end;
 
   > a {
-    padding: 0 12px 0 (24px + 12px + 6px);
-    font: 14px/72px var(--font-inter);
+    padding: 0 12px 0 (24px + 12px);
+    font: 14px/1 var(--font-inter);
 
     @each $key, $icon in $icon-map {
       &.-#{$key} {
-        background: url($icon) 12px center / 24px no-repeat;
+        background: url($icon) 6px center / 24px no-repeat;
       }
     }
 
@@ -63,7 +63,6 @@ $icon-x: ic-x(#fff);
   display: flex;
   place-content: center;
   place-items: center;
-  padding: 0 24px;
 
   > button,
   > input {
@@ -71,19 +70,15 @@ $icon-x: ic-x(#fff);
   }
 
   > button {
-    min-width: 60px;
-    border-radius: 0 6px 6px 0;
-    color: #fff;
+    min-width: (12px + 24px + 12px);
     background: var(--red, red) url($icon-search) center / 24px no-repeat;
   }
 
   > input {
-    // width: 100%;
     width: 768px;
-    min-width: 0;
-    // max-width: 768px;
     padding: 0 12px 0 0;
-    border-radius: 6px 0 0 6px;
+    outline: none;
+    color: var(--dark-200, red);
     text-indent: 24px;
   }
 }
@@ -130,7 +125,19 @@ $icon-x: ic-x(#fff);
 }
 
 @media (min-width: 768px + 1px) {
+  $minmax: minmax(auto, 240px);
+
   .component-header-bar {
-    grid: auto / auto 0 1fr auto;
+    grid: 72px / $minmax 0 1fr $minmax;
+  }
+
+  .component-header-search {
+    > button {
+      border-radius: 0 6px 6px 0;
+    }
+
+    > input {
+      border-radius: 6px 0 0 6px;
+    }
   }
 }
