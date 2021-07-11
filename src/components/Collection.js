@@ -2,7 +2,7 @@
 import Card from 'ui/Card'
 
 const products = {
-  'Pools and Water Toys': [
+  'Pool and Beach': [
     {
       title: 'Inflatable Avocado Pool Floatie with Ball',
       amazon: 'https://www.amazon.com/dp/B07LG9RJT7/',

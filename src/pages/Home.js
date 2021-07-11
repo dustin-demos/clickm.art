@@ -1,25 +1,35 @@
 
 import Default from 'layouts/Default'
 
-import Card from 'ui/Card'
-import Toggle from 'ui/Toggle'
+// import Card from 'ui/Card'
+// import Toggle from 'ui/Toggle'
 
 import Carousel from 'components/Carousel'
 import Collection from 'components/Collection'
 
+/**
+ *
+ * Components
+ *
+ */
+
 const Advertisement = () => {
-  return (
-    <div class='page-home-advertisement'></div>
-  )
+  return <div class='page-home-advertisement'></div>
 }
+
+/**
+ *
+ * Main Export
+ *
+ */
 
 const Home = (state, dispatch) => {
   return (
     <div class='page-home'>
       <div class='page-home-content'>
-        {/* <Carousel/> */}
-        <Advertisement/>
-        {/* <Collection category='Pools and Water Toys'/> */}
+        <Carousel/>
+        {/* <Advertisement/> */}
+        {/* <Collection category='Pool and Beach'/> */}
         {/* <Card icon='' title='Electronics'>
           <Product/>
         </Card> */}

@@ -14,8 +14,8 @@ export default (props, children) => state => {
           {children(state, dispatch)}
         </div>
       </div>
-      <Panel/>
       <Sidebar/>
+      <Panel/>
     </div>
   )
 }

@@ -15,10 +15,8 @@ $icons: (
 
 .ui-card {
   padding: 36px;
-  border-radius: 18px;
-  color: var(--card-text-primary);
-  background: var(--card-background);
-  // transition: background-color 200ms;
+  border-radius: 6px;
+  background: #fff;
 }
 
 .ui-card-head {
@@ -35,7 +33,7 @@ $icons: (
   }
 
   @each $key, $value in $icons {
-    &.#{$key} {
+    &.-#{$key} {
       background: url('#{$value}') 0 0 / 30px no-repeat;
     }
   }
