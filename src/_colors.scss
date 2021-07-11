@@ -43,9 +43,12 @@ $dark-100: lab(40, 0, -20);
   --purple: #{$purple};
 
   /* Destructured Colors */
-  --dark-600-rgb: #{destructure-color($dark-600)};
-  --blue-rgb: #{destructure-color($blue)};
   --red-rgb: #{destructure-color($red)};
+  --orange-rgb: #{destructure-color($orange)};
+  --yellow-rgb: #{destructure-color($yellow)};
+  --green-rgb: #{destructure-color($green)};
+  --blue-rgb: #{destructure-color($blue)};
+  --purple-rgb: #{destructure-color($purple)};
 
   /* Theme Colors */
   --primary: var(--blue);
