@@ -100,10 +100,10 @@ $icon-x: ic-x(#fff);
 
   > a {
     margin: auto;
-    padding: 0 0 0 36px;
+    padding: 0 0 0 (12px + 24px + 12px);
     font: 600 14px/48px var(--font-inter);
     text-decoration: underline;
-    background: url($icon-bell) 0 center / 24px no-repeat;
+    background: url($icon-bell) 12px center / 24px no-repeat;
   }
 
   > button {
