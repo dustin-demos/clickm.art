@@ -9,12 +9,13 @@ $icon-map: (
   'icon-gift': ic-gift($dark-100),
   'icon-receipt': ic-receipt($dark-100),
   'icon-settings': ic-settings($dark-100),
-  'icon-power': ic-power($dark-100)
+  'icon-power': ic-power($dark-100),
+  'icon-key': ic-key($dark-100)
 );
 
 .component-sidebar {
-  color: var(--dark-100);
   font: 14px/42px var(--font-inter);
+  user-select: none;
 }
 
 .component-sidebar-menu,
@@ -48,14 +49,14 @@ $icon-map: (
   > a {
     padding: 0 36px 0 (36px + 24px + 12px);
 
-    &:hover {
-      background-color: var(--light-100, red);
-    }
-
     @each $key, $icon in $icon-map {
       &.-#{$key} {
         background: url($icon) 36px center / 24px no-repeat;
       }
+    }
+
+    &:hover {
+      background-color: var(--light-100, red);
     }
   }
 }
@@ -67,8 +68,20 @@ $icon-map: (
   pointer-events: none;
   transition: opacity 200ms;
 
+  > img {
+    position: absolute;
+    bottom: 0;
+    left: -288px;
+    width: 288px;
+    transition: left 200ms;
+  }
+
   &.-active {
     opacity: 1;
     pointer-events: initial;
+
+    > img {
+      left: 288px;
+    }
   }
 }

@@ -28,7 +28,9 @@ const Overlay = props => {
     props.active && '-active'
   ])
 
-  return <div class={classList} onclick={toggleSidebar}></div>
+  return <div class={classList} onclick={toggleSidebar}>
+    <img src='/cache/neko.webp'/>
+  </div>
 }
 
 /**
@@ -63,7 +65,8 @@ export default () => {
           <Link to='/lists' icon='-icon-gift'>Wish Lists</Link>
           <Link to='/orders' icon='-icon-receipt'>Orders</Link>
           <Link to='/settings' icon='-icon-settings'>Settings</Link>
-          <Link to='/sign-out' icon='-icon-power'>Sign Out</Link>
+          <Link to='/logout' icon='-icon-power'>Logout</Link>
+          <Link to='/login' icon='-icon-key'>Login</Link>
         </nav>
       </div>
     </div>

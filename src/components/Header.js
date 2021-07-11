@@ -21,6 +21,10 @@ const toggleBanner = () => {
   dispatch($common.toggle, 'banner')
 }
 
+const toggleSidebar = () => {
+  dispatch($common.toggle, 'sidebar')
+}
+
 /**
  *
  * Components
@@ -30,7 +34,8 @@ const toggleBanner = () => {
 const Navigation = (props, children) => {
   return (
     <nav class='header-navigation'>
-      <Link to='/' icon='-menu-2' alt='Menu'>Menu</Link>
+      <button onclick={toggleSidebar}>Menu</button>
+      {/* <Link to='/' icon='-menu-2' alt='Menu'>Menu</Link> */}
       <Link to='/account' icon='-user' alt='Account'>Account</Link>
       <Link to='/cart' icon='-shopping-cart' alt='Cart'>Cart</Link>
     </nav>

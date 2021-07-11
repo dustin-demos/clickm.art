@@ -82,8 +82,8 @@ export default props => {
     panel.active && '-active'
   ])
 
-  const settingsClass = cc([
-    'component-panel-settings',
+  const contentClass = cc([
+    'component-panel-content',
     panel.active && '-active'
   ])
 
@@ -95,43 +95,45 @@ export default props => {
   return (
     ref.vnode = <div draggable='true' class={panelClass} style={style} ondragstart={dragStart} ondragend={dragEnd}>
       <h1>Developer Panel</h1>
-      <div class={settingsClass}>
-        <Setting
-          label='Toggle Banner'
-          active={common.banner}
-          onClick={toggleBanner}
-        />
-        <hr/>
-        <Setting
-          label='Toggle Sidebar'
-          active={common.sidebar}
-          onClick={toggleSidebar}
-        />
-        <hr/>
-      </div>
-      <div class='component-panel-palette'>
-        <div class='-red'></div>
-        <div class='-orange'></div>
-        <div class='-yellow'></div>
-        <div class='-green'></div>
-        <div class='-blue'></div>
-        <div class='-purple'></div>
-      </div>
-      <div class='component-panel-palette'>
-        <div class='-dark-600'></div>
-        <div class='-dark-500'></div>
-        <div class='-dark-400'></div>
-        <div class='-dark-300'></div>
-        <div class='-dark-200'></div>
-        <div class='-dark-100'></div>
-      </div>
-      <div class='component-panel-palette'>
-        <div class='-light-600'></div>
-        <div class='-light-500'></div>
-        <div class='-light-400'></div>
-        <div class='-light-300'></div>
-        <div class='-light-200'></div>
-        <div class='-light-100'></div>
+      <div class={contentClass}>
+        <div class='component-panel-settings'>
+          <Setting
+            label='Toggle Banner'
+            active={common.banner}
+            onClick={toggleBanner}
+          />
+          <hr/>
+          <Setting
+            label='Toggle Sidebar'
+            active={common.sidebar}
+            onClick={toggleSidebar}
+          />
+          <hr/>
+        </div>
+        <div class='component-panel-palette'>
+          <div class='-red'></div>
+          <div class='-orange'></div>
+          <div class='-yellow'></div>
+          <div class='-green'></div>
+          <div class='-blue'></div>
+          <div class='-purple'></div>
+        </div>
+        <div class='component-panel-palette'>
+          <div class='-dark-600'></div>
+          <div class='-dark-500'></div>
+          <div class='-dark-400'></div>
+          <div class='-dark-300'></div>
+          <div class='-dark-200'></div>
+          <div class='-dark-100'></div>
+        </div>
+        <div class='component-panel-palette'>
+          <div class='-light-600'></div>
+          <div class='-light-500'></div>
+          <div class='-light-400'></div>
+          <div class='-light-300'></div>
+          <div class='-light-200'></div>
+          <div class='-light-100'></div>
+        </div>
       </div>
       <button alt='Toggle Developer Panel' onclick={togglePanel}></button>
     </div>

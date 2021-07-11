@@ -16,6 +16,7 @@ $icon-x: ic-x(#fff);
   white-space: nowrap;
   overflow: hidden;
   background: var(--dark-500, red);
+  user-select: none;
   transition: height 200ms;
 }
 
@@ -38,6 +39,21 @@ $icon-x: ic-x(#fff);
 
 /**
  *
+ * Component Panel Content
+ *
+ */
+
+.component-panel-content {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.component-panel-content.-active {
+  opacity: 1;
+}
+
+/**
+ *
  * Component Panel Settings
  *
  */
@@ -45,8 +61,6 @@ $icon-x: ic-x(#fff);
 .component-panel-settings {
   display: grid;
   gap: 12px;
-  opacity: 0;
-  transition: opacity 200ms;
 }
 
 .component-panel-settings > div {
@@ -60,10 +74,6 @@ $icon-x: ic-x(#fff);
 .component-panel-settings > hr {
   height: 2px;
   background: var(--dark-300, red);
-}
-
-.component-panel-settings.-active {
-  opacity: 1;
 }
 
 /**
@@ -97,7 +107,6 @@ $colors: (
 
 .component-panel-palette {
   display: flex;
-  padding: 12px 0 0;
 
   > div {
     flex: 1;
