@@ -1,12 +1,11 @@
 
 $icon-map: (
-  'menu-2': ic-menu-2(#fff),
   'shopping-cart': ic-shopping-cart(#fff),
   'user': ic-user(#fff)
 );
 
 $icon-bell: ic-bell(#fff);
-$icon-mail: ic-mail(#fff);
+$icon-menu-2: ic-menu-2(#fff);
 $icon-search: ic-search(#fff);
 $icon-x: ic-x(#fff);
 
@@ -16,41 +15,55 @@ $icon-x: ic-x(#fff);
  *
  */
 
-.header {
-  // position: fixed;
-  // top: 0;
-  // right: 0;
-  // left: 0;
-}
-
-.header-bar {
-  background: var(--dark-500, red);
-}
-
-.header-navigation {
-  display: grid;
-  grid: auto / 1fr auto auto;
-  gap: 24px;
-  padding: 0 12px;
+.component-header {
   color: var(--white, red);
+}
+
+.component-header-bar {
+  display: grid;
+  grid: auto / auto 1fr auto;
+  background: var(--dark-500, red);
+  transition: grid-template-rows 2s, grid-template-columns, order 2s;
+}
+
+.component-header-primary {
+  display: flex;
+
+  > button {
+    width: 72px;
+    height: 72px;
+    background: url($icon-menu-2) center / 24px no-repeat;
+  }
+
+  > h1 {
+    font: 800 24px/72px var(--font-mont);
+  }
+}
+
+.component-header-navigation {
+  display: flex;
 
   > a {
-    padding: 0 0 0 (24px + 12px);
-    font: 14px/48px var(--font-inter);
+    padding: 0 12px 0 (24px + 12px + 6px);
+    font: 14px/72px var(--font-inter);
 
     @each $key, $icon in $icon-map {
       &.-#{$key} {
-        background: url($icon) 0 center  / 24px no-repeat;
+        background: url($icon) 12px center / 24px no-repeat;
       }
+    }
+
+    &:hover {
+      background-color: var(--dark-300);
     }
   }
 }
 
-.header-search {
+.component-header-search {
   display: flex;
   place-content: center;
-  padding: 0 12px 18px (24px + 36px + 12px);
-  background: url('/cache/logo.svg') 12px 12px / auto 24px no-repeat;
+  place-items: center;
+  padding: 0 24px;
 
   > button,
   > input {
@@ -65,15 +78,17 @@ $icon-x: ic-x(#fff);
   }
 
   > input {
+    // width: 100%;
     width: 768px;
     min-width: 0;
+    // max-width: 768px;
     padding: 0 12px 0 0;
     border-radius: 6px 0 0 6px;
     text-indent: 24px;
   }
 }
 
-.header-banner {
+.component-header-banner {
   display: flex;
   height: 0;
   color: #fff;
@@ -84,6 +99,11 @@ $icon-x: ic-x(#fff);
   transition:
     height 200ms,
     opacity 200ms;
+
+  &.-active {
+    height: var(--height);
+    opacity: 1;
+  }
 
   > a {
     margin: auto;
@@ -100,9 +120,17 @@ $icon-x: ic-x(#fff);
     margin: 0 0 0 -48px;
     background: url($icon-x) center right 12px / 24px no-repeat;
   }
+}
 
-  &.-active {
-    height: var(--height);
-    opacity: 1;
+@media (max-width: 768px) {
+  .component-header-search {
+    order: 1;
+    grid-column: span 3;
+  }
+}
+
+@media (min-width: 768px + 1px) {
+  .component-header-bar {
+    grid: auto / auto 0 1fr auto;
   }
 }

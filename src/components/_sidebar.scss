@@ -36,7 +36,16 @@ $icon-map: (
     margin: 0;
   }
 
+  > a {
+    display: block;
+    padding: 0 0 0 36px;
+    color: var(--dark-200);
+    font: 800 30px/96px var(--font-mont);
+    text-transform: uppercase;
+  }
+
   > h2 {
+    margin: -14px 0 0;
     padding: 0 36px;
     font-weight: 600;
   }

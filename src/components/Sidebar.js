@@ -28,9 +28,11 @@ const Overlay = props => {
     props.active && '-active'
   ])
 
-  return <div class={classList} onclick={toggleSidebar}>
-    <img src='/cache/neko.webp'/>
-  </div>
+  return (
+    <div class={classList} onclick={toggleSidebar}>
+      <img src='/cache/neko.webp'/>
+    </div>
+  )
 }
 
 /**

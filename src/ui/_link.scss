@@ -2,14 +2,6 @@
 .ui-link {
   white-space: nowrap;
 
-  &.-logo {
-    display: block;
-    padding: 36px 0 36px 36px;
-    color: var(--dark-200);
-    font: 800 30px/1 var(--font-mont);
-    text-transform: uppercase;
-  }
-
   &.-carousel {
     display: inline-block;
     padding: 0 24px;

@@ -31,11 +31,18 @@ const toggleSidebar = () => {
  *
  */
 
-const Navigation = (props, children) => {
+const Primary = () => {
   return (
-    <nav class='header-navigation'>
-      <button onclick={toggleSidebar}>Menu</button>
-      {/* <Link to='/' icon='-menu-2' alt='Menu'>Menu</Link> */}
+    <div class='component-header-primary'>
+      <button onclick={toggleSidebar}></button>
+      <h1>CLICKMART</h1>
+    </div>
+  )
+}
+
+const Navigation = () => {
+  return (
+    <nav class='component-header-navigation'>
       <Link to='/account' icon='-user' alt='Account'>Account</Link>
       <Link to='/cart' icon='-shopping-cart' alt='Cart'>Cart</Link>
     </nav>
@@ -44,8 +51,8 @@ const Navigation = (props, children) => {
 
 const Search = () => {
   return (
-    <div class='header-search'>
-      <input type='search' placeholder='Search Clickmart for the Lowest Prices!'/>
+    <div class='component-header-search'>
+      <input type='search' placeholder='Search here for the lowest prices!'/>
       <button alt='Search'></button>
     </div>
   )
@@ -60,7 +67,7 @@ const Banner = () => {
   })
 
   const classList = cc([
-    'header-banner',
+    'component-header-banner',
     common.banner && '-active'
   ])
 
@@ -79,10 +86,12 @@ const Banner = () => {
 
 export default () => {
   return (
-    <div class='header'>
-      <div class='header-bar'>
-        <Navigation/>
+    <div class='component-header'>
+      <div class='component-header-bar'>
+        <Primary/>
+        <div>{/* empty */}</div>
         <Search/>
+        <Navigation/>
       </div>
       <Banner/>
     </div>
