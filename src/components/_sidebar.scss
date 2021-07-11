@@ -1,5 +1,6 @@
 
 $icon-map: (
+  'icon-star': ic-star($dark-100),
   'icon-pizza': ic-pizza($dark-100),
   'icon-ripple': ic-ripple($dark-100),
   'icon-leaf': ic-leaf($dark-100),
@@ -11,7 +12,10 @@ $icon-map: (
   'icon-power': ic-power($dark-100)
 );
 
-// .component-sidebar {}
+.component-sidebar {
+  color: var(--dark-100);
+  font: 14px/42px var(--font-inter);
+}
 
 .component-sidebar-menu,
 .component-sidebar-overlay {
@@ -24,7 +28,6 @@ $icon-map: (
 .component-sidebar-menu {
   width: 288px;
   margin: 0 0 0 -288px;
-  padding: 36px 0;
   background: #fff;
   transition: margin 200ms;
 
@@ -33,25 +36,26 @@ $icon-map: (
   }
 
   > h2 {
-    padding: 36px 36px 12px;
-    font: 14px/1 var(--font-inter);
+    padding: 0 36px;
+    font-weight: 600;
   }
 }
 
 .component-sidebar-nav {
   display: grid;
+  padding: 0 0 24px;
 
   > a {
-    padding: 16px 36px 16px (36px + 24px + 12px);
+    padding: 0 36px 0 (36px + 24px + 12px);
+
+    &:hover {
+      background-color: var(--light-100, red);
+    }
 
     @each $key, $icon in $icon-map {
       &.-#{$key} {
         background: url($icon) 36px center / 24px no-repeat;
       }
-    }
-
-    &:hover {
-      background-color: var(--light-100, red);
     }
   }
 }

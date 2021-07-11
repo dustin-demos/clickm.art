@@ -49,13 +49,14 @@ export default () => {
     <div class='component-sidebar'>
       <Overlay active={common.sidebar}/>
       <div class={classList}>
-        <Link to='/' class='-logo'></Link>
+        <Link to='/' class='-logo'>Clickmart</Link>
         <h2>Departments</h2>
         <nav class='component-sidebar-nav'>
-          <Link to='/' icon='-icon-pizza'>Snacks</Link>
-          <Link to='/' icon='-icon-ripple'>Pool and Beach</Link>
-          <Link to='/' icon='-icon-leaf'>Patio and Garden</Link>
-          <Link to='/' icon='-icon-devices'>Electronics</Link>
+          <Link to='/department/popular' icon='-icon-star'>Popular</Link>
+          <Link to='/department/snacks' icon='-icon-pizza'>Snacks</Link>
+          <Link to='/department/pool-beach' icon='-icon-ripple'>Pool and Beach</Link>
+          <Link to='/department/patio-garden' icon='-icon-leaf'>Patio and Garden</Link>
+          <Link to='/department/electronics' icon='-icon-devices'>Electronics</Link>
         </nav>
         <h2>Account</h2>
         <nav class='component-sidebar-nav'>

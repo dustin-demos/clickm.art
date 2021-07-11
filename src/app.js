@@ -71,7 +71,10 @@ export const { getState, dispatch } = app({
     '/missing': Missing,
     '/register': Register,
     '/subscribe': Subscribe
-  }
+  },
+  rewrites: [
+    { source: /^\/department/, destination: '/department' }
+  ]
 })
 
 /**
