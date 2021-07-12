@@ -6,7 +6,7 @@ const products = {
     {
       title: 'Inflatable Avocado Pool Floatie with Ball',
       amazon: 'https://www.amazon.com/dp/B07LG9RJT7/',
-      price: '$22.99',
+      price: '$29.99',
       images: [
         '/products/61RKbylA+9L._AC_SL1500_.jpg',
         '/products/61NH8p0QisL._AC_SL1500_.jpg',
@@ -20,7 +20,7 @@ const products = {
     {
       title: 'Inflatable Avocado Pool Floatie with Ball',
       amazon: 'https://www.amazon.com/dp/B07LG9RJT7/',
-      price: '$22.99',
+      price: '$29.99',
       images: [
         '/products/61RKbylA+9L._AC_SL1500_.jpg',
         '/products/61NH8p0QisL._AC_SL1500_.jpg',
@@ -34,7 +34,7 @@ const products = {
     {
       title: 'Inflatable Avocado Pool Floatie with Ball',
       amazon: 'https://www.amazon.com/dp/B07LG9RJT7/',
-      price: '$22.99',
+      price: '$29.99',
       images: [
         '/products/61RKbylA+9L._AC_SL1500_.jpg',
         '/products/61NH8p0QisL._AC_SL1500_.jpg',
@@ -48,17 +48,42 @@ const products = {
   ]
 }
 
+/**
+ *
+ * Event Handlers
+ *
+ */
+
+const add = () => {
+  console.log('add')
+}
+
+/**
+ *
+ * Components
+ *
+ */
+
 const Product = (props, children) => {
   const style = `background: url('${props.images[0]}') center / contain no-repeat;`
 
   return (
     <div class='component-collection-product'>
-      <div class='component-collection-product-image' style={style}></div>
-      <div>{props.price}</div>
-      <div>{props.title}</div>
+      <div class='-image' style={style}>
+        <div>Added!</div>
+      </div>
+      <button onclick={add}></button>
+      <div class='-price'>{props.price}</div>
+      <div class='-title'>{props.title}</div>
     </div>
   )
 }
+
+/**
+ *
+ * Main Export
+ *
+ */
 
 export default (props, children) => {
   const target = products[props.category].map(item => (
@@ -66,7 +91,7 @@ export default (props, children) => {
   ))
 
   return (
-    <Card title={props.category}>
+    <Card icon='-icon-ripple' title={props.category}>
       <div class='component-collection'>
         {target}
       </div>

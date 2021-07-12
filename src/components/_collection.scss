@@ -1,10 +1,55 @@
 
+$icon-plus: ic-plus(#fff);
+
+/**
+ * Component Collection
+ */
+
 .component-collection {
   display: flex;
   gap: 24px;
 }
 
-.component-collection-product-image {
-  width: 144px;
+/**
+ * Component Collection Product
+ */
+
+.component-collection-product {
+  display: grid;
+  width: 144px + 48px;
+  padding: 22px 24px;
+  border: 1px solid var(--light-200);
+  border-radius: 6px;
+  // background: var(--light-100);
+}
+
+.component-collection-product > .-image {
+  display: flex;
   height: 144px;
+  font: 600 14px/1 var(--font-inter);
+
+  > div {
+    margin: auto;
+    padding: 12px 24px;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--red, red);
+  }
+}
+
+.component-collection-product > .-price {
+  font: 600 16px/48px var(--font-inter);
+}
+
+.component-collection-product > .-title {
+  margin: -2px 0 0;
+  font: 14px/18px var(--font-inter);
+}
+
+.component-collection-product > button {
+  width: 36px;
+  height: 36px;
+  margin: -18px -12px -18px auto;
+  border-radius: 18px;
+  background: var(--red) url($icon-plus) center / 24px no-repeat;
 }

@@ -27,9 +27,9 @@ const Home = (state, dispatch) => {
   return (
     <div class='page-home'>
       <div class='page-home-content'>
-        <Carousel/>
+        {/* <Carousel/> */}
         {/* <Advertisement/> */}
-        {/* <Collection category='Pool and Beach'/> */}
+        <Collection category='Pool and Beach'/>
         {/* <Card icon='' title='Electronics'>
           <Product/>
         </Card> */}

@@ -10,7 +10,9 @@ export default (props, children) => {
           </div>
         </div>
       </div>
-      {children}
+      <div class='ui-card-content'>
+        {children}
+      </div>
     </div>
   )
 }
