@@ -65,6 +65,10 @@ button {
   background: initial;
 }
 
+input[type=search] {
+  -webkit-appearance: none;
+}
+
 /**
  *
  * NOTE: This sets the maximum page width when using this viewport meta tag.
