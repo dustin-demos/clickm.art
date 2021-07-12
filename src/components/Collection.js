@@ -1,52 +1,6 @@
 
+import { getState, dispatch } from 'app'
 import Card from 'ui/Card'
-
-const products = {
-  'Pool and Beach': [
-    {
-      title: 'Inflatable Avocado Pool Floatie with Ball',
-      amazon: 'https://www.amazon.com/dp/B07LG9RJT7/',
-      price: '$29.99',
-      images: [
-        '/products/61RKbylA+9L._AC_SL1500_.jpg',
-        '/products/61NH8p0QisL._AC_SL1500_.jpg',
-        '/products/61DXBWnDI+L._AC_SL1500_.jpg',
-        '/products/71uPv9tJJyL._AC_SL1500_.jpg',
-        '/products/619ghvc8ELL._AC_SL1500_.jpg',
-        '/products/713Ts8pJHCL._AC_SL1500_.jpg',
-        '/products/717tdmdQv4L._AC_SL1500_.jpg'
-      ]
-    },
-    {
-      title: 'Inflatable Avocado Pool Floatie with Ball',
-      amazon: 'https://www.amazon.com/dp/B07LG9RJT7/',
-      price: '$29.99',
-      images: [
-        '/products/61RKbylA+9L._AC_SL1500_.jpg',
-        '/products/61NH8p0QisL._AC_SL1500_.jpg',
-        '/products/61DXBWnDI+L._AC_SL1500_.jpg',
-        '/products/71uPv9tJJyL._AC_SL1500_.jpg',
-        '/products/619ghvc8ELL._AC_SL1500_.jpg',
-        '/products/713Ts8pJHCL._AC_SL1500_.jpg',
-        '/products/717tdmdQv4L._AC_SL1500_.jpg'
-      ]
-    },
-    {
-      title: 'Inflatable Avocado Pool Floatie with Ball',
-      amazon: 'https://www.amazon.com/dp/B07LG9RJT7/',
-      price: '$29.99',
-      images: [
-        '/products/61RKbylA+9L._AC_SL1500_.jpg',
-        '/products/61NH8p0QisL._AC_SL1500_.jpg',
-        '/products/61DXBWnDI+L._AC_SL1500_.jpg',
-        '/products/71uPv9tJJyL._AC_SL1500_.jpg',
-        '/products/619ghvc8ELL._AC_SL1500_.jpg',
-        '/products/713Ts8pJHCL._AC_SL1500_.jpg',
-        '/products/717tdmdQv4L._AC_SL1500_.jpg'
-      ]
-    }
-  ]
-}
 
 /**
  *
@@ -86,7 +40,12 @@ const Product = (props, children) => {
  */
 
 export default (props, children) => {
-  const target = products[props.category].map(item => (
+  const { products } = getState()
+
+  const collections = products.collections
+  const group = collections[props.category]
+
+  const target = group.map(item => (
     <Product title={item.title} price={item.price} images={item.images}/>
   ))
 

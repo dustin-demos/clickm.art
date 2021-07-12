@@ -1,4 +1,5 @@
 
+$icon-check: ic-check(#fff);
 $icon-plus: ic-plus(#fff);
 
 /**
@@ -8,6 +9,7 @@ $icon-plus: ic-plus(#fff);
 .component-collection {
   display: flex;
   gap: 24px;
+  overflow: auto;
 }
 
 /**
@@ -15,12 +17,11 @@ $icon-plus: ic-plus(#fff);
  */
 
 .component-collection-product {
+  flex: 0 0 (144px + 48px);
   display: grid;
-  width: 144px + 48px;
   padding: 22px 24px;
-  border: 1px solid var(--light-200);
+  border: 1px solid var(--light-200, red);
   border-radius: 6px;
-  // background: var(--light-100);
 }
 
 .component-collection-product > .-image {
@@ -30,10 +31,10 @@ $icon-plus: ic-plus(#fff);
 
   > div {
     margin: auto;
-    padding: 12px 24px;
+    padding: 12px 18px 12px (12px + 24px + 6px);
     border-radius: 6px;
     color: #fff;
-    background: var(--red, red);
+    background: var(--red, red) url($icon-check) 12px center / 24px no-repeat;
   }
 }
 

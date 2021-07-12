@@ -65,6 +65,7 @@ button {
   background: initial;
 }
 
+// Remove round styling on iOS
 input[type=search] {
   -webkit-appearance: none;
 }

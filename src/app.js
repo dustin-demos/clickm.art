@@ -4,6 +4,7 @@ import { patch } from 'superfine'
 
 import * as common from 'stores/common'
 import * as panel from 'stores/panel'
+import * as products from 'stores/products'
 
 import Home from 'pages/Home'
 import Account from 'pages/Account'
@@ -27,6 +28,7 @@ export const { getState, dispatch } = app({
   state: {
     common: common.state,
     panel: panel.state,
+    products: products.state,
     carousel: {
       index: 0,
       pause: false
