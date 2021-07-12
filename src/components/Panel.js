@@ -8,6 +8,8 @@ import * as $panel from 'stores/panel'
 import css from 'modules/css-concat'
 import once from 'modules/run-once'
 
+import Inspector from 'components/Inspector'
+
 import Toggle from 'ui/Toggle'
 
 const onMounted = once()
@@ -19,16 +21,18 @@ const onMounted = once()
  */
 
 const dragStart = event => {
+  const rect = event.target.getBoundingClientRect()
+
   dispatch($panel.setOffset, [
-    event.offsetX,
-    event.offsetY
+    event.offsetX ?? event.touches[0].clientX - rect.left,
+    event.offsetY ?? event.touches[0].clientY - rect.top
   ])
 }
 
 const dragEnd = event => {
   dispatch($panel.setPosition, [
-    event.clientX,
-    event.clientY
+    event.clientX ?? event.changedTouches[0].clientX,
+    event.clientY ?? event.changedTouches[0].clientY
   ])
 }
 
@@ -42,6 +46,10 @@ const toggleBanner = () => {
 
 const toggleSidebar = () => {
   dispatch($common.toggle, 'sidebar')
+}
+
+const setStore = event => {
+  dispatch($panel.setStore, event.target.value)
 }
 
 /**
@@ -59,6 +67,22 @@ const Setting = props => {
   )
 }
 
+const Selector = props => {
+  const state = props.state
+  const key = state.panel.store
+
+  return (
+    <div class='component-panel-inspector'>
+      <select onchange={setStore}>
+        {Object.keys(state).map(key => <option>{key}</option>)}
+      </select>
+      <div>
+        <Inspector path={key} value={state[key]}/>
+      </div>
+    </div>
+  )
+}
+
 /**
  *
  * Main Export
@@ -66,7 +90,8 @@ const Setting = props => {
  */
 
 export default props => {
-  const { common, panel } = getState()
+  const state = getState()
+  const { common, panel } = state
 
   const ref = { vnode: null }
   const [x, y] = panel.position
@@ -93,8 +118,19 @@ export default props => {
   })
 
   return (
-    ref.vnode = <div draggable='true' class={panelClass} style={style} ondragstart={dragStart} ondragend={dragEnd}>
-      <h1>Developer Panel</h1>
+    ref.vnode = <div
+      draggable='true'
+
+      class={panelClass}
+      style={style}
+
+      ondragstart={dragStart}
+      ondragend={dragEnd}
+    >
+      <h1
+            ontouchstart={dragStart}
+            ontouchend={dragEnd}
+      >Developer Panel</h1>
       <div class={contentClass}>
         <div class='component-panel-settings'>
           <Setting
@@ -111,29 +147,32 @@ export default props => {
           <hr/>
         </div>
         <div class='component-panel-palette'>
-          <div class='-red'></div>
-          <div class='-orange'></div>
-          <div class='-yellow'></div>
-          <div class='-green'></div>
-          <div class='-blue'></div>
-          <div class='-purple'></div>
+          <div>
+            <div class='-red'></div>
+            <div class='-orange'></div>
+            <div class='-yellow'></div>
+            <div class='-green'></div>
+            <div class='-blue'></div>
+            <div class='-purple'></div>
+          </div>
+          <div>
+            <div class='-dark-600'></div>
+            <div class='-dark-500'></div>
+            <div class='-dark-400'></div>
+            <div class='-dark-300'></div>
+            <div class='-dark-200'></div>
+            <div class='-dark-100'></div>
+          </div>
+          <div>
+            <div class='-light-600'></div>
+            <div class='-light-500'></div>
+            <div class='-light-400'></div>
+            <div class='-light-300'></div>
+            <div class='-light-200'></div>
+            <div class='-light-100'></div>
+          </div>
         </div>
-        <div class='component-panel-palette'>
-          <div class='-dark-600'></div>
-          <div class='-dark-500'></div>
-          <div class='-dark-400'></div>
-          <div class='-dark-300'></div>
-          <div class='-dark-200'></div>
-          <div class='-dark-100'></div>
-        </div>
-        <div class='component-panel-palette'>
-          <div class='-light-600'></div>
-          <div class='-light-500'></div>
-          <div class='-light-400'></div>
-          <div class='-light-300'></div>
-          <div class='-light-200'></div>
-          <div class='-light-100'></div>
-        </div>
+        <Selector state={state}/>
       </div>
       <button alt='Toggle Developer Panel' onclick={togglePanel}></button>
     </div>

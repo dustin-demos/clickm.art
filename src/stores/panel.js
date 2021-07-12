@@ -3,11 +3,18 @@ const key = 'pocket-panel-position'
 const json = sessionStorage.getItem(key)
 const position = JSON.parse(json)
 
-export const state = {
+const init = () => ({
   active: true,
   height: 'auto',
   offset: [0, 0],
-  position: position ?? [100, 100]
+  position: position ?? [100, 100],
+  store: 'common'
+})
+
+export const state = init()
+
+export const reset = () => {
+  return init()
 }
 
 export const toggle = ({ panel }) => {
@@ -37,5 +44,10 @@ export const setPosition = ({ panel }, value) => {
   const json = JSON.stringify(panel.position)
   sessionStorage.setItem(key, json)
 
+  return { panel }
+}
+
+export const setStore = ({ panel }, value) => {
+  panel.store = value
   return { panel }
 }

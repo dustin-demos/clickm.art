@@ -44,6 +44,8 @@ $icon-x: ic-x(#fff);
  */
 
 .component-panel-content {
+  display: grid;
+  gap: 24px;
   opacity: 0;
   transition: opacity 200ms;
 }
@@ -105,17 +107,48 @@ $colors: (
   'dark-100': $dark-100
 );
 
-.component-panel-palette {
+// .component-panel-palette {}
+
+.component-panel-palette > div {
   display: flex;
+  height: 24px;
+}
 
-  > div {
-    flex: 1;
-    height: 24px;
+.component-panel-palette > div > div {
+  flex: 1;
+}
 
-    @each $key, $value in $colors {
-      &.-#{$key} {
-        background: $value;
-      }
-    }
+@each $key, $value in $colors {
+  .component-panel-palette > div > .-#{$key} {
+    background: $value;
   }
+}
+
+/**
+ *
+ * Component Panel inspector
+ *
+ */
+
+.component-panel-inspector {
+  display: grid;
+  gap: 12px;
+}
+
+.component-panel-inspector > div {
+  min-width: 144px * 2;
+  height: 144px * 2;
+  border-radius: 6px;
+  font: 12px/1.25 var(--font-monospace);
+  white-space: pre-wrap;
+  overflow: overlay;
+  background: var(--dark-300, red);
+}
+
+.component-panel-inspector > select {
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 6px;
+  outline: none;
+  background: var(--dark-300, red);
 }
