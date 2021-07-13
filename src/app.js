@@ -88,6 +88,10 @@ export const { getState, dispatch } = app({
       destination: '/market'
     },
     {
+      source: '/subscribe',
+      destination: '/subscribe'
+    },
+    {
       type: 'hostname',
       source: 'wholesale.clickm.art',
       destination: '/wholesale'
