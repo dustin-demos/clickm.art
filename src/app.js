@@ -15,6 +15,7 @@ import Market from 'pages/Market'
 import Missing from 'pages/Missing'
 import Register from 'pages/Register'
 import Subscribe from 'pages/Subscribe'
+import Wholesale from 'pages/Wholesale'
 
 /**
  *
@@ -74,10 +75,12 @@ export const { getState, dispatch } = app({
     '/market': Market,
     '/missing': Missing,
     '/register': Register,
-    '/subscribe': Subscribe
+    '/subscribe': Subscribe,
+    '/wholesale': Wholesale
   },
   rewrites: [
-    { source: /^\/department/, destination: '/department' }
+    { source: /^\/department/, destination: '/department' },
+    { source: '/s', destination: '/market' }
   ]
 })
 

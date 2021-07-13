@@ -30,9 +30,9 @@ const render = data => {
 }
 
 const options = {
-  title: 'Clickmart | The best prices on the dankest products.',
+  title: 'Clickmart | Find the lowest wholesale prices on a great selection of fun every day items.',
   author: 'CLICKMART LLC',
-  description: 'Find the lowest pricest on a great selection of every day items.',
+  description: 'Find the lowest wholesale prices on a great selection of fun every day items.',
   viewport: 'width=device-width,maximum-scale=5'
 }
 

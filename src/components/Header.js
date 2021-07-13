@@ -1,5 +1,6 @@
 
 import cc from 'classcat'
+import { link } from 'pocket'
 
 import { getState, dispatch } from 'app'
 import * as $common from 'stores/common'
@@ -23,6 +24,15 @@ const toggleBanner = () => {
 
 const toggleSidebar = () => {
   dispatch($common.toggle, 'sidebar')
+}
+
+const search = event => {
+  console.log('searching...')
+
+  link({
+    to: '/s',
+    query: { k: event.target.value }
+  })
 }
 
 /**
@@ -52,8 +62,8 @@ const Navigation = () => {
 const Search = () => {
   return (
     <div class='component-header-search'>
-      <input type='search' placeholder='Search products'/>
-      <button alt='Search'></button>
+      <input type='search' placeholder='Search products' onsearch={search}/>
+      <button alt='Search' onclick={search}></button>
     </div>
   )
 }

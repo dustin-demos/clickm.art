@@ -18,14 +18,15 @@
 
 @import 'components/carousel';
 @import 'components/collection';
-@import 'components/inspector';
+@import 'components/footer';
 @import 'components/header';
+@import 'components/inspector';
 @import 'components/panel';
 @import 'components/sidebar';
 
-@import 'pages/home';
 @import 'pages/account';
 @import 'pages/foobar';
+@import 'pages/home';
 @import 'pages/login';
 @import 'pages/subscribe';
 

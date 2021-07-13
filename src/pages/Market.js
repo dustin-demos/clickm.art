@@ -1,22 +1,20 @@
 
 import Main from 'layouts/Default'
-import Toggle from 'ui/Toggle'
 
-const Home = (state, dispatch) => {
+const Market = (state, dispatch) => {
   return (
     <div>
-      <div>Hello I am content for the page "Home".</div>
-      <Toggle/>
+      <div>Hello I am content for the page "Market".</div>
     </div>
   )
 }
 
 export default {
-  view: Main({ title: 'Home' }, Home),
+  view: Main({ title: 'Market' }, Market),
   onRoute: () => {
-    console.log('Foobar >> onRoute')
+    console.log('Market >> onRoute')
   },
   onBeforeLeave: () => {
-    console.log('Foobar >> onBeforeLeave')
+    console.log('Market >> onBeforeLeave')
   }
 }

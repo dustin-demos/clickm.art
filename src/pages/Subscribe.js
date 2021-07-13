@@ -38,9 +38,9 @@ const Subscribe = (state, dispatch) => {
 export default {
   view: Default({ title: 'Subscribe' }, Subscribe),
   onRoute: () => {
-    console.log('Missing >> onRoute')
+    console.log('Subscribe >> onRoute')
   },
   onBeforeLeave: () => {
-    console.log('Missing >> onBeforeLeave')
+    console.log('Subscribe >> onBeforeLeave')
   }
 }

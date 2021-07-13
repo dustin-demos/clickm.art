@@ -12,13 +12,13 @@
 
 @media (min-width: 1440px + 1px) {
   .layout-default-content {
-    display: flex;
-    padding: 36px 0;
+    display: grid;
+    grid: 1fr auto / auto;
 
     > div {
-      flex: 1;
       max-width: 1440px;
       margin: auto;
+      padding: 36px 0;
     }
   }
 }

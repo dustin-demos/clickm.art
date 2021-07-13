@@ -37,9 +37,9 @@ const Login = (state, dispatch) => {
 export default {
   view: Login,
   onRoute: () => {
-    console.log('Account >> onRoute')
+    console.log('Login >> onRoute')
   },
   onBeforeLeave: () => {
-    console.log('Account >> onBeforeLeave')
+    console.log('Login >> onBeforeLeave')
   }
 }

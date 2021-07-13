@@ -8,11 +8,11 @@ const Account = (state, dispatch) => {
 }
 
 export default {
-  view: Default({ title: 'Account' }, Account),
+  view: Default({ title: 'Register' }, Account),
   onRoute: () => {
-    console.log('Account >> onRoute')
+    console.log('Register >> onRoute')
   },
   onBeforeLeave: () => {
-    console.log('Account >> onBeforeLeave')
+    console.log('Register >> onBeforeLeave')
   }
 }

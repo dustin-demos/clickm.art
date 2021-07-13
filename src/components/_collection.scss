@@ -47,6 +47,7 @@ $icon-plus: ic-plus(#fff);
 
 .component-collection-product > .-price {
   font: 600 16px/48px var(--font-inter);
+  pointer-events: none;
 }
 
 .component-collection-product > .-title {
@@ -56,6 +57,7 @@ $icon-plus: ic-plus(#fff);
 }
 
 .component-collection-product > button {
+  // z-index: 1;
   width: 36px;
   height: 36px;
   margin: -18px -12px -18px auto;
