@@ -84,16 +84,12 @@ export const { getState, dispatch } = app({
       destination: '/department'
     },
     {
-      source: '/s',
+      source: /^\/s$/,
       destination: '/market'
     },
     {
-      source: '/login',
-      destination: '/login'
-    },
-    {
       type: 'hostname',
-      source: 'wholesale.clickm.art',
+      source: /^wholesale\.clickm\.art$/,
       destination: '/wholesale'
     }
   ]
