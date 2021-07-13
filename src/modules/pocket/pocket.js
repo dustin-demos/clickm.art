@@ -87,10 +87,10 @@ const sync = ({ router }, init) => {
 
   router.query = search.startsWith('?') ? decode(search) : ''
 
-  if (init.pages[pathname]) {
-    router.to = pathname
-    return { router }
-  }
+  // if (init.pages[pathname]) {
+  //   router.to = pathname
+  //   return { router }
+  // }
 
   for (let i = 0; i < init.rewrites.length; i++) {
     const rewrite = init.rewrites[i]
@@ -99,9 +99,12 @@ const sync = ({ router }, init) => {
     if (result !== null) {
       router.id = result[0]
       router.to = rewrite.destination
-      break
+      // break
+      return { router }
     }
   }
+
+  router.to = pathname
 
   return { router }
 }
