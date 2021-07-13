@@ -94,7 +94,7 @@ const sync = ({ router }, init) => {
 
   for (let i = 0; i < init.rewrites.length; i++) {
     const rewrite = init.rewrites[i]
-    const result = pathname.match(rewrite.source)
+    const result = location[rewrite.type ?? 'pathname'].match(rewrite.source)
 
     if (result !== null) {
       router.id = result[0]

@@ -79,8 +79,19 @@ export const { getState, dispatch } = app({
     '/wholesale': Wholesale
   },
   rewrites: [
-    { source: /^\/department/, destination: '/department' },
-    { source: '/s', destination: '/market' }
+    {
+      source: /^\/department/,
+      destination: '/department'
+    },
+    {
+      source: '/s',
+      destination: '/market'
+    },
+    {
+      type: 'hostname',
+      source: 'wholesale.clickm.art',
+      destination: '/wholesale'
+    }
   ]
 })
 
