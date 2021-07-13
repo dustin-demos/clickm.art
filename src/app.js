@@ -68,7 +68,7 @@ export const { getState, dispatch } = app({
     }
   },
   pages: {
-    '/': Home,
+    '/home': Home,
     '/account': Account,
     '/foobar': Foobar,
     '/login': Login,
@@ -79,17 +79,33 @@ export const { getState, dispatch } = app({
     '/wholesale': Wholesale
   },
   rewrites: [
+    // {
+    //   source: () => location.pathname.startsWith('/department'),
+    //   destination: '/foobar'
+    // },
     {
-      source: /^\/department/,
-      destination: '/department'
-    },
-    {
-      source: /^\/s$/,
+      source: () => location.pathname.match(/^\/s$/),
       destination: '/market'
     },
+    // {
+    //   type: 'hostname',
+    //   source: /^clickm\.art$/,
+    //   destination: '/home'
+    // },
+    // {
+    //   type: 'multi',
+    //   source: {
+    //     hostname: /^wholesale\.clickm\.art$/,
+    //     pathname: '/'
+    //   },
+    //   destination: '/wholesale'
+    // },
     {
-      type: 'hostname',
-      source: /^wholesale\.clickm\.art$/,
+      // type: 'callback',
+      source: () => {
+        const { hostname, pathname } = location
+        return hostname === 'wholesale.clickm.art' && pathname === '/'
+      },
       destination: '/wholesale'
     }
   ]
