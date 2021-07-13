@@ -83,21 +83,36 @@ const manager = (state, render) => {
 
 const sync = ({ router }, init) => {
   const search = location.search
+  const pathname = location.pathname
+
   router.query = search.startsWith('?') ? decode(search) : ''
 
   for (let i = 0; i < init.rewrites.length; i++) {
     const rewrite = init.rewrites[i]
-    const result = rewrite.source(location)
 
-    if (result != null) {
-      router.id = result
+    if (typeof rewrite.source === 'function') {
+      const result = rewrite.source(location)
+
+      if (result != null) {
+        router.id = result
+        router.to = rewrite.destination
+
+        return { router }
+      }
+    }
+
+    const result = pathname.match(rewrite.source)
+
+    if (result !== null) {
+      router.id = result[0]
       router.to = rewrite.destination
 
       return { router }
     }
   }
 
-  router.to = location.pathname
+  router.id = null
+  router.to = pathname
 
   return { router }
 }
@@ -156,8 +171,9 @@ export default (init, patch) => {
   let route
 
   init.state.router = {
-    query: '',
-    to: '/'
+    id: null,
+    to: '/',
+    query: {}
   }
 
   const { getState, dispatch } = manager(init.state, state => {

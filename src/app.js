@@ -80,21 +80,18 @@ export const { getState, dispatch } = app({
   },
   rewrites: [
     {
-      source: ({ pathname }) => {
-        const result = pathname.match(/^\/department/)
-        if (result !== null) return result[0]
-      },
+      source: /^\/department/,
       destination: '/foobar'
     },
     {
-      source: ({ pathname }) => {
-        const result = pathname.match(/^\/s$/)
-        if (result !== null) return result[0]
-      },
+      source: /^\/s$/,
       destination: '/market'
     },
     {
-      source: ({ hostname, pathname }) => {
+      source: () => {
+        const hostname = location.hostname
+        const pathname = location.pathname
+
         return hostname === 'wholesale.clickm.art' && pathname === '/'
       },
       destination: '/wholesale'
