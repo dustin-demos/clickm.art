@@ -83,14 +83,7 @@ const manager = (state, render) => {
 
 const sync = ({ router }, init) => {
   const search = location.search
-  const pathname = location.pathname
-
   router.query = search.startsWith('?') ? decode(search) : ''
-
-  // if (init.pages[pathname]) {
-  //   router.to = pathname
-  //   return { router }
-  // }
 
   for (let i = 0; i < init.rewrites.length; i++) {
     const rewrite = init.rewrites[i]
@@ -99,12 +92,12 @@ const sync = ({ router }, init) => {
     if (result !== null) {
       router.id = result[0]
       router.to = rewrite.destination
-      // break
+
       return { router }
     }
   }
 
-  router.to = pathname
+  router.to = location.pathname
 
   return { router }
 }
