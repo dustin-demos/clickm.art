@@ -79,31 +79,22 @@ export const { getState, dispatch } = app({
     '/wholesale': Wholesale
   },
   rewrites: [
-    // {
-    //   source: () => location.pathname.startsWith('/department'),
-    //   destination: '/foobar'
-    // },
     {
-      source: () => location.pathname.match(/^\/s$/),
+      source: ({ pathname }) => {
+        const result = pathname.match(/^\/department/)
+        if (result !== null) return result[0]
+      },
+      destination: '/foobar'
+    },
+    {
+      source: ({ pathname }) => {
+        const result = pathname.match(/^\/s$/)
+        if (result !== null) return result[0]
+      },
       destination: '/market'
     },
-    // {
-    //   type: 'hostname',
-    //   source: /^clickm\.art$/,
-    //   destination: '/home'
-    // },
-    // {
-    //   type: 'multi',
-    //   source: {
-    //     hostname: /^wholesale\.clickm\.art$/,
-    //     pathname: '/'
-    //   },
-    //   destination: '/wholesale'
-    // },
     {
-      // type: 'callback',
-      source: () => {
-        const { hostname, pathname } = location
+      source: ({ hostname, pathname }) => {
         return hostname === 'wholesale.clickm.art' && pathname === '/'
       },
       destination: '/wholesale'
