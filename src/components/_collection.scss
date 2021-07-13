@@ -16,6 +16,13 @@ $icon-plus: ic-plus(#fff);
  * Component Collection Product
  */
 
+._multiline-ellipsis {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 .component-collection-product {
   flex: 0 0 (144px + 48px);
   display: grid;
@@ -43,6 +50,7 @@ $icon-plus: ic-plus(#fff);
 }
 
 .component-collection-product > .-title {
+  height: 36px;
   margin: -2px 0 0;
   font: 14px/18px var(--font-inter);
 }

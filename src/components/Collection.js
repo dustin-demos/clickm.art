@@ -28,7 +28,7 @@ const Product = (props, children) => {
       </div>
       <button onclick={add}></button>
       <div class='-price'>{props.price}</div>
-      <div class='-title'>{props.title}</div>
+      <div class='-title _multiline-ellipsis'>{props.title}</div>
     </div>
   )
 }
@@ -50,7 +50,7 @@ export default (props, children) => {
   ))
 
   return (
-    <Card icon='-icon-ripple' title={props.category}>
+    <Card icon={props.icon} title={props.category}>
       <div class='component-collection'>
         {target}
       </div>

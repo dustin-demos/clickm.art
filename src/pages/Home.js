@@ -27,9 +27,11 @@ const Home = (state, dispatch) => {
   return (
     <div class='page-home'>
       <div class='page-home-content'>
-        {/* <Carousel/> */}
-        {/* <Advertisement/> */}
-        <Collection category='Pool and Beach'/>
+        <Carousel/>
+        <Advertisement/>
+        <Collection icon='-icon-ripple' category='Pool and Beach'/>
+        <Collection icon='-icon-brand-apple-arcade' category='Gaming'/>
+        <Collection icon='-icon-headset' category='PC Accessories'/>
         {/* <Card icon='' title='Electronics'>
           <Product/>
         </Card> */}

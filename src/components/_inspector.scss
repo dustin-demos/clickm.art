@@ -17,6 +17,14 @@ $base0d: #8fa1b3;
 $base0e: #b48ead;
 $base0f: #ab7967;
 
+// github dark theme modified
+$base05: #dde4eb;
+$base08: #ed6981;
+$base09: #f8a75f;
+$base0a: #f2cc60;
+$base0b: #a7db83;
+$base0c: #79c0ff;
+
 .component-inspector {
   padding: 2ch;
   color: $base05;
@@ -79,7 +87,7 @@ $base0f: #ab7967;
   }
 
   .-key {
-    color: $base08;
+    color: $base0c;
 
     &::after {
       color: $base05;
@@ -98,7 +106,7 @@ $base0f: #ab7967;
   }
 
   .-boolean {
-    color: $base0c;
+    color: $base09;
   }
 
   .-function {
@@ -116,7 +124,7 @@ $base0f: #ab7967;
   }
 
   .-number {
-    color: $base0a;
+    color: $base09;
   }
 
   .-object {

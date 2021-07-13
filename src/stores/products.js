@@ -1,13 +1,23 @@
 
 import database from '../database'
 
+const filterBy = key => {
+  return database.filter(item => {
+    if (item.active === false) {
+      return false
+    }
+
+    return item.tags.includes(key)
+  })
+}
+
 export const state = {
   database,
   cart: [],
   collections: {
-    'Pool and Beach': database.map(item => {
-      return item.tags.includes('pool') && item
-    })
+    'Pool and Beach': filterBy('pool'),
+    'Gaming': filterBy('gaming'),
+    'PC Accessories': filterBy('computer')
   }
 }
 

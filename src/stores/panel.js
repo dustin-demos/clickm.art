@@ -1,7 +1,7 @@
 
 const key = 'pocket-panel'
 const json = sessionStorage.getItem(key)
-const { store, position } = JSON.parse(json) ?? {}
+const { position, store } = JSON.parse(json) ?? {}
 
 const init = () => ({
   active: true,

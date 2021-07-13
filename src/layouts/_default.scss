@@ -1,14 +1,19 @@
 
-// .layout-default {}
+.layout-default {
+  display: grid;
+  grid: auto 1fr / auto;
+  height: 100vh;
+}
 
 .layout-default-content {
+  overflow: overlay;
   transition: padding 200ms;
 }
 
 @media (min-width: 1440px + 1px) {
   .layout-default-content {
     display: flex;
-    padding: 36px 0 0;
+    padding: 36px 0;
 
     > div {
       flex: 1;
