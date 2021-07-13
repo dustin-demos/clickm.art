@@ -69,15 +69,19 @@ const Setting = props => {
 
 const Selector = props => {
   const state = props.state
-  const key = state.panel.store
+  const store = state.panel.store
+
+  const options = Object.keys(state).map(key => (
+    <option selected={key === store}>{key}</option>
+  ))
 
   return (
     <div class='component-panel-inspector'>
       <select onchange={setStore}>
-        {Object.keys(state).map(key => <option>{key}</option>)}
+        {options}
       </select>
       <div>
-        <Inspector path={key} value={state[key]}/>
+        <Inspector path={store} value={state[store]}/>
       </div>
     </div>
   )
@@ -117,20 +121,20 @@ export default props => {
     dispatch($panel.setHeight, height + 'px')
   })
 
+  const dragEvents = {
+    ondragstart: dragStart,
+    ondragend: dragEnd,
+    ontouchstart: dragStart,
+    ontouchend: dragEnd
+  }
+
   return (
-    ref.vnode = <div
-      draggable='true'
-
-      class={panelClass}
-      style={style}
-
-      ondragstart={dragStart}
-      ondragend={dragEnd}
-    >
-      <h1
-            ontouchstart={dragStart}
-            ontouchend={dragEnd}
-      >Developer Panel</h1>
+    ref.vnode = <div class={panelClass} style={style}>
+      <div class='component-panel-titlebar' draggable='true' {...dragEvents}>
+        <div></div>
+        <h1>Developer Panel</h1>
+        <button alt='Toggle Developer Panel' onclick={togglePanel}></button>
+      </div>
       <div class={contentClass}>
         <div class='component-panel-settings'>
           <Setting
@@ -174,7 +178,6 @@ export default props => {
         </div>
         <Selector state={state}/>
       </div>
-      <button alt='Toggle Developer Panel' onclick={togglePanel}></button>
     </div>
   )
 }

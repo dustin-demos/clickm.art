@@ -1,17 +1,45 @@
 
-const key = 'pocket-panel-position'
+const key = 'pocket-panel'
 const json = sessionStorage.getItem(key)
-const position = JSON.parse(json)
+const { store, position } = JSON.parse(json) ?? {}
 
 const init = () => ({
   active: true,
   height: 'auto',
   offset: [0, 0],
   position: position ?? [100, 100],
-  store: 'common'
+  store: store ?? 'common'
 })
 
 export const state = init()
+
+/**
+ *
+ * Helpers
+ *
+ */
+
+const setItem = value => {
+  const key = 'pocket-panel'
+  sessionStorage.setItem(key, JSON.stringify(value))
+}
+
+const assignStorage = data => {
+  const json = sessionStorage.getItem(key)
+
+  if (json === null) {
+    setItem(data)
+    return // early exit
+  }
+
+  setItem(Object.assign(JSON.parse(json), data))
+}
+
+/**
+ *
+ * Actions
+ *
+ */
 
 export const reset = () => {
   return init()
@@ -41,13 +69,19 @@ export const setPosition = ({ panel }, value) => {
     positionY - offsetY
   ]
 
-  const json = JSON.stringify(panel.position)
-  sessionStorage.setItem(key, json)
+  assignStorage({
+    position: panel.position
+  })
 
   return { panel }
 }
 
 export const setStore = ({ panel }, value) => {
   panel.store = value
+
+  assignStorage({
+    store: panel.store
+  })
+
   return { panel }
 }

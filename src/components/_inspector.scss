@@ -19,12 +19,10 @@ $base0f: #ab7967;
 
 .component-inspector {
   padding: 2ch;
-  border-radius: 6px;
   color: $base05;
   font: 600 14px/1.25 var(--font-monospace);
   white-space: pre;
   overflow: overlay;
-  // background: $base00;
   user-select: none;
 
   &.-popout {
@@ -47,7 +45,7 @@ $base0f: #ab7967;
   .-close {
     .-array {
       &::after {
-        content: ' ... ]';
+        content: '...]';
       }
 
       div {
@@ -57,7 +55,7 @@ $base0f: #ab7967;
 
     .-function {
       &::after {
-        content: '{ ... }';
+        content: '{...}';
       }
 
       span {
@@ -67,7 +65,7 @@ $base0f: #ab7967;
 
     .-object {
       &::after {
-        content: ' ... }';
+        content: '...}';
       }
 
       div {

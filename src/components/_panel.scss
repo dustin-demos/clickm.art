@@ -1,4 +1,6 @@
 
+$icon-chevron-down: ic-chevron-down(#fff);
+$icon-code-plus: ic-code-plus(#fff);
 $icon-x: ic-x(#fff);
 
 /**
@@ -9,8 +11,7 @@ $icon-x: ic-x(#fff);
 
 .component-panel {
   position: fixed;
-  height: 24px + 16px + 24px;
-  padding: 24px;
+  height: 36px;
   border-radius: 12px;
   color: #fff;
   white-space: nowrap;
@@ -20,21 +21,37 @@ $icon-x: ic-x(#fff);
   transition: height 200ms;
 }
 
-.component-panel > button {
-  position: absolute;
-  top: 24px - 9px;
-  right: 24px - 9px;
-  padding: 18px;
-  background: url($icon-x) center / 24px no-repeat;
-}
-
-.component-panel > h1 {
-  padding: 0 0 24px;
-  font: 600 16px/1 var(--font-inter);
-}
-
 .component-panel.-active {
   height: var(--height);
+}
+
+/**
+ *
+ * Component Panel Titlebar
+ *
+ */
+
+.component-panel-titlebar {
+  display: flex;
+  place-content: space-between;
+  background: var(--dark-600);
+}
+
+.component-panel-titlebar > h1 {
+  font: 12px/36px var(--font-inter);
+}
+
+.component-panel-titlebar > button,
+.component-panel-titlebar > div {
+  padding: 18px;
+}
+
+.component-panel-titlebar > div {
+  background: url($icon-code-plus) center / 24px no-repeat;
+}
+
+.component-panel-titlebar > button {
+  background: url($icon-x) center / 24px no-repeat;
 }
 
 /**
@@ -46,6 +63,7 @@ $icon-x: ic-x(#fff);
 .component-panel-content {
   display: grid;
   gap: 24px;
+  padding: 12px 24px 24px;
   opacity: 0;
   transition: opacity 200ms;
 }
@@ -146,9 +164,11 @@ $colors: (
 }
 
 .component-panel-inspector > select {
-  height: 42px;
+  appearance: none;
+  height: 36px;
   padding: 0 12px;
   border-radius: 6px;
   outline: none;
-  background: var(--dark-300, red);
+  font: 14px/1 var(--font-inter);
+  background: var(--dark-300, red) url($icon-chevron-down) center right 12px / 24px no-repeat;
 }
