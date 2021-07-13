@@ -88,8 +88,8 @@ export const { getState, dispatch } = app({
       destination: '/market'
     },
     {
-      source: '/subscribe',
-      destination: '/subscribe'
+      source: '/login',
+      destination: '/login'
     },
     {
       type: 'hostname',
