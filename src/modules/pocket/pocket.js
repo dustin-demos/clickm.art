@@ -85,7 +85,7 @@ const sync = ({ router }, init) => {
   const search = location.search
   const pathname = location.pathname
 
-  router.query = search.startsWith('?') ? decode(search) : ''
+  router.query = search.startsWith('?') ? decode(search) : {}
 
   for (let i = 0; i < init.rewrites.length; i++) {
     const rewrite = init.rewrites[i]
@@ -93,12 +93,14 @@ const sync = ({ router }, init) => {
     if (typeof rewrite.source === 'function') {
       const result = rewrite.source()
 
-      if (result != null) {
-        router.id = result
-        router.to = rewrite.destination
-
-        return { router }
+      if (result === false || result == null) {
+        continue
       }
+
+      router.id = result
+      router.to = rewrite.destination
+
+      return { router }
     }
 
     const result = pathname.match(rewrite.source)
