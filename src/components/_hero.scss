@@ -1,0 +1,125 @@
+
+$mustard: mix($dark-500, $yellow, 12.5%);
+
+.component-hero {
+  color: #fff;
+  background: url('/cache/products.png') center 65% / cover no-repeat;
+}
+
+.component-hero > div {
+  display: grid;
+  gap: 12px;
+  padding: 36px 24px;
+  background: rgba($mustard, 0.375);
+  transition:
+    height 200ms,
+    padding 200ms;
+}
+
+/**
+ *
+ * Hero Info
+ *
+ */
+
+.component-hero-info > h1 {
+  margin: -6px 0;
+  font: 800 36px/48px var(--font-mont);
+}
+
+.component-hero-info > h2 {
+  margin: -3px 0;
+  font: 600 18px/36px var(--font-inter);
+  transition: margin 200ms;
+}
+
+/**
+ *
+ * Hero Buttons
+ *
+ */
+
+.component-hero-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.component-hero-buttons > button {
+  height: (48px + 12px);
+  padding: 0 24px;
+  border-radius: 6px;
+  font: 600 16px/1 var(--font-inter);
+  transition: padding 200ms;
+}
+
+.component-hero-buttons > button:first-of-type {
+  color: var(--dark-500);
+  background: #fff;
+}
+
+.component-hero-buttons > button:last-of-type {
+  padding: 0 (24px - 2px);
+  border: 2px solid #fff;
+}
+
+/**
+ *
+ * Tablet Screens
+ *
+ */
+
+@media (min-width: 768px + 1px) {
+  .component-hero > div {
+    padding: 72px 48px;
+  }
+}
+
+/**
+ *
+ * Laptop Screens
+ *
+ */
+
+@media (min-width: 1024px + 1px) {
+  .component-hero > div {
+    gap: 24px;
+    padding: 144px 48px (144px - 24px);
+  }
+
+  .component-hero-info {
+    text-align: center;
+  }
+
+  .component-hero-info > h1 {
+    font: 800 48px/1 var(--font-mont);
+  }
+
+  .component-hero-info > h2 {
+    margin: 12px 0 0;
+  }
+
+  .component-hero-buttons {
+    place-content: center;
+    gap: 18px;
+  }
+
+  .component-hero-buttons > button {
+    padding: 0 36px;
+  }
+
+  .component-hero-buttons > button:last-of-type {
+    padding: 0 (36px - 2px);
+  }
+}
+
+/**
+ *
+ * Desktop Screens
+ *
+ */
+
+@media (min-width: 1440px + 1px) {
+  .component-hero > div {
+    border-radius: 6px;
+  }
+}

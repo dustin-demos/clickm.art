@@ -1,9 +1,17 @@
 
 import Default from 'layouts/Default'
+import Hero from 'components/Hero'
 
 const Wholesale = () => {
   return (
-    <div>Hello i am wholesale.</div>
+    <div class='page-wholesale'>
+      <Hero/>
+      <div class='page-wholesale-row'>
+        <div>one</div>
+        <div>one</div>
+        <div>one</div>
+      </div>
+    </div>
   )
 }
 

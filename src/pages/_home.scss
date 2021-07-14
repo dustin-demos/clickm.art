@@ -4,15 +4,11 @@
 .page-home-content {
   display: grid;
   gap: 24px;
-  max-width: 1440px;
-  margin: auto;
 }
 
 .page-home-advertisement {
   width: 100%; // kinda silly yeah?
-  min-width: 0;
   height: 144px;
-  margin: auto;
   border-radius: 6px;
   background: var(--light-200) url('https://via.placeholder.com/1440x144') center;
 }
@@ -38,6 +34,5 @@
  */
 
 @media (min-width: 1440px + 1px) {
-  .page-home {
-  }
+
 }

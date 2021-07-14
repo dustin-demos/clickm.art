@@ -7,21 +7,21 @@ const slides = [
     title: 'Pool Rafts',
     tagline: 'We have have everything to help you make your summer memorable.',
     category: '',
-    image: '/carousel/pool.png',
+    image: '/cache/pool.png',
     color: '--red'
   },
   {
     title: 'Patio and Grill',
     tagline: 'We have all the outdoor essentials for the perfect cookout.',
     category: '',
-    image: '/carousel/grill.png',
+    image: '/cache/grill.png',
     color: '--green'
   },
   {
     title: 'Electronics',
     tagline: 'Complete your office and get things done with our tech accessories.',
     category: '',
-    image: '/carousel/electronics.png',
+    image: '/cache/electronics.png',
     color: '--blue'
   }
 ]
