@@ -63,7 +63,7 @@ function Type (path, value, key) {
     case 'object':
       return value
         ? Tree(path, key, Both(path, value))
-        : Row('-null', key, value + '')
+        : Row('-null', key)
     case 'string':
       return Row('-string', key, value)
     case 'undefined':
