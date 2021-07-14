@@ -68,7 +68,7 @@ export const { getState, dispatch } = app({
     }
   },
   pages: {
-    '/home': Home,
+    '/': Home,
     '/account': Account,
     '/foobar': Foobar,
     '/login': Login,
