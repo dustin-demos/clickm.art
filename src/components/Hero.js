@@ -2,8 +2,10 @@
 const Header = () => {
   return (
     <div class='component-hero-info'>
-      <h1>Shop wholesale online.</h1>
-      <h2>Buy online from dozens of high quality brands.</h2>
+      {/* <h1>Shop wholesale online.</h1> */}
+      {/* <h2>Buy online from dozens of high quality brands.</h2> */}
+      <h1>Shop wholesale pet products.</h1>
+      <h2>Your most trusted source of high quality wholesale pet products.</h2>
     </div>
   )
 }

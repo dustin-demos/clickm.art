@@ -51,8 +51,9 @@ body {
   min-height: 100vh;
   color: var(--dark-200, red);
   font: 400 1em/1 var(--font-inter, sans-serif);
-  background: var(--light-100, red) url('/cache/geometry2.png');
-  background-blend-mode: multiply;
+  background: var(--light-100, red);
+  // background: var(--light-100, red) url('/cache/geometry2.png');
+  // background-blend-mode: multiply;
 }
 
 a,

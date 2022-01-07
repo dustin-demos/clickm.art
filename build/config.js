@@ -9,7 +9,7 @@ const common = {
   nodePaths: ['src', 'src/modules'],
   write: false,
   // - - - JSX - - -
-  inject: ['./src/modules/pocket/shim.js'],
+  inject: ['./node_modules/superstatic/src/jsx-shim.js'],
   jsxFactory: 'jsx',
   loader: {
     '.js': 'jsx'
@@ -18,7 +18,11 @@ const common = {
   define: {
     'process.env.DEV': development,
     'process.env.PROD': production,
-    'process.env.YEAR': year
+    'process.env.YEAR': year,
+
+    'APP_DEV': development,
+    'APP_PROD': production,
+    'APP_YEAR': year
   }
 }
 
@@ -29,7 +33,11 @@ exports.esbuild = {
     sourcemap: true,
     define: {
       ...common.define,
-      'process.env.STATIC': false
+      // 'FF_QUIET': false,
+      // 'FF_ROUTE_EVENTS': true,
+      // 'FF_ROUTE_MIDDLEWARE': false,
+      // 'FF_ROUTE_REWRITES': true,
+      'process.env.FF_STATIC_RENDER': false
     }
   },
   html: {
@@ -37,7 +45,7 @@ exports.esbuild = {
     platform: 'node',
     define: {
       ...common.define,
-      'process.env.STATIC': true
+      'process.env.FF_STATIC_RENDER': true
     }
   }
 }

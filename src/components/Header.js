@@ -1,13 +1,11 @@
 
 import cc from 'classcat'
-import { link } from 'pocket'
+import { link, once } from 'pocket'
 
 import { getState, dispatch } from 'app'
 import * as $common from 'stores/common'
 
 import css from 'modules/css-concat'
-import once from 'modules/run-once'
-
 import Link from 'ui/Link'
 
 const onMounted = once()
@@ -87,7 +85,7 @@ const Banner = () => {
   })
 
   return (
-    ref.vnode = <div class={classList} style={style}>
+    ref.vnode = <div class={classList} style={style} key='banner'>
       <Link to='/subscribe'>Click Here to Subscribe to Our Price Drop Alerts!</Link>
       <button onclick={toggleBanner}></button>
     </div>

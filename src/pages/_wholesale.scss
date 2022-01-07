@@ -1,19 +1,79 @@
 
+$icon-map: (
+  'truck-delivery': ic-truck-delivery($dark-100),
+  'gift': ic-gift($dark-100),
+  'discount-2': ic-discount-2($dark-100),
+  // 'receipt': ic-receipt($dark-100),
+  'calendar-plus': ic-calendar-plus($dark-100),
+  'certificate': ic-certificate($dark-100),
+);
+
 // .page-wholesale {}
+
+/**
+ *
+ * Page Wholesale About
+ *
+ */
+
+.page-wholesale-about {
+  display: grid;
+  place-content: center;
+  margin: 24px 0 0;
+  padding: 36px 24px;
+  color: #fff;
+  background: var(--dark-100);
+}
+
+.page-wholesale-about > h1 {
+  font: 36px/1 var(--font-inter);
+  text-align: center;
+}
+
+.page-wholesale-about > div {
+  max-width: 768px;
+}
+
+.page-wholesale-about > div > p {
+  margin: (24px - 2px) 0 -2px;
+  font: 16px/24px var(--font-inter);
+}
+
+
+
+/**
+ *
+ * Page Wholesale Row
+ *
+ */
 
 .page-wholesale-row {
   display: grid;
-  gap: 48px;
-  padding: 24px;
+  gap: 24px;
+  padding: 36px 24px;
   background: #fff;
   transition:
+    gap 200ms,
     margin 200ms,
     padding 200ms;
+}
+
+.page-wholesale-row > div {
+  padding: 24px 36px;
+  border-radius: 6px;
+  background: var(--light-100);
 }
 
 .page-wholesale-row > div > h1 {
   margin: 0 0 24px;
   font: 24px/1 var(--font-inter);
+}
+
+@each $key, $icon in $icon-map {
+  .page-wholesale-row > div > h1.-#{$key} {
+    padding: (12px * 4 + 12px) 0 0;
+    background: url($icon) top left / (12px * 4) no-repeat;
+  }
 }
 
 .page-wholesale-row > div > p {
@@ -27,6 +87,31 @@
   text-decoration: underline;
 }
 
+.page-wholesale-row > div > div {
+  width: 288px - 72px;
+  height: 288px;
+  border-radius: 6px;
+  // background: url('/fausto-sandoval-w5m3PIGvkqI-unsplash.jpg') center / cover no-repeat;
+  // background: url('/rhema-kallianpur-fIF0Hdikywc-unsplash.jpg') center / cover no-repeat;
+}
+
+.page-wholesale-row > div > div.-pool {
+  background: url('/rhema-kallianpur-fIF0Hdikywc-unsplash.jpg') center / cover no-repeat;
+}
+
+.page-wholesale-row > div > div.-headphones {
+  background: url('/fausto-sandoval-w5m3PIGvkqI-unsplash.jpg') center / cover no-repeat;
+}
+
+.page-wholesale-row > div > div.-keyboard {
+  // background: url('/girl-with-red-hat-Z6SXt1v5tP8-unsplash.jpg') center / cover no-repeat;
+  background: url('/chris-j-davis-PT_9ux0j-x4-unsplash.jpg') center / cover no-repeat;
+}
+
+.page-wholesale-row > div > div.-audio {
+  background: url('/harry-cunningham-_1J2AioiNC0-unsplash.jpg') center / cover no-repeat;
+}
+
 /**
  *
  * Tablet Screens
@@ -35,10 +120,7 @@
 
 @media (min-width: 768px + 1px) {
   .page-wholesale-row {
-    display: flex;
-    margin: 24px 0 0;
     padding: 36px;
-    border-radius: 6px;
   }
 }
 
@@ -50,7 +132,14 @@
 
 @media (min-width: 1024px + 1px) {
   .page-wholesale-row {
+    display: flex;
+    gap: 48px;
+    margin: 24px 0 0;
     padding: 48px;
+  }
+
+  .page-wholesale-row > div {
+    flex: 1;
   }
 }
 
@@ -61,5 +150,12 @@
  */
 
 @media (min-width: 1440px + 1px) {
+  .page-wholesale-about {
+    border-radius: 6px;
+  }
 
+  .page-wholesale-row {
+    padding: 48px 96px;
+    border-radius: 6px;
+  }
 }

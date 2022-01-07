@@ -6,9 +6,10 @@
   },
   "dependencies": {
     "@tabler/icons": "^1.41.2",
-    "@whaaaley/material-icons-scss": "^4.0.3",
     "classcat": "^5.0.3",
-    "superfine": "^8.2.0"
+    "pocket": "git+https://github.com/onclick-llc/pocket.git",
+    "superfine": "^8.2.0",
+    "superstatic": "git+https://github.com/onclick-llc/superstatic.git"
   },
   "devDependencies": {
     "clean-css": "^5.1.3",

@@ -3,14 +3,14 @@ $mustard: mix($dark-500, $yellow, 12.5%);
 
 .component-hero {
   color: #fff;
-  background: url('/cache/products.png') center 65% / cover no-repeat;
+  background: url('/cache/petbed.png') center 25% / cover no-repeat;
 }
 
 .component-hero > div {
   display: grid;
-  gap: 12px;
+  gap: 18px;
   padding: 36px 24px;
-  background: rgba($mustard, 0.375);
+  background: rgba($dark-100, 0.375);
   transition:
     height 200ms,
     padding 200ms;
@@ -23,13 +23,13 @@ $mustard: mix($dark-500, $yellow, 12.5%);
  */
 
 .component-hero-info > h1 {
-  margin: -6px 0;
-  font: 800 36px/48px var(--font-mont);
+  margin: 0 0 9px;
+  font: 800 36px/1 var(--font-mont);
+  transition: margin 200ms;
 }
 
 .component-hero-info > h2 {
-  margin: -3px 0;
-  font: 600 18px/36px var(--font-inter);
+  font: 600 18px/1 var(--font-inter);
   transition: margin 200ms;
 }
 
@@ -41,7 +41,7 @@ $mustard: mix($dark-500, $yellow, 12.5%);
 
 .component-hero-buttons {
   display: flex;
-  gap: 12px;
+  gap: 18px;
 }
 
 .component-hero-buttons > button {
@@ -91,16 +91,12 @@ $mustard: mix($dark-500, $yellow, 12.5%);
   }
 
   .component-hero-info > h1 {
+    margin: 0 0 12px;
     font: 800 48px/1 var(--font-mont);
-  }
-
-  .component-hero-info > h2 {
-    margin: 12px 0 0;
   }
 
   .component-hero-buttons {
     place-content: center;
-    gap: 18px;
   }
 
   .component-hero-buttons > button {
@@ -119,7 +115,8 @@ $mustard: mix($dark-500, $yellow, 12.5%);
  */
 
 @media (min-width: 1440px + 1px) {
-  .component-hero > div {
+  .component-hero {
     border-radius: 6px;
+    overflow: hidden;
   }
 }
