@@ -28,7 +28,7 @@ const search = event => {
   console.log('searching...')
 
   link({
-    to: '/s',
+    to: '/clickmart/s',
     query: { k: event.target.value }
   })
 }
@@ -43,7 +43,7 @@ const Primary = () => {
   return (
     <div class='component-header-primary'>
       <button onclick={toggleSidebar}></button>
-      <Link to='/'>CLICKMART</Link>
+      <Link to='/clickmart/'>CLICKMART</Link>
     </div>
   )
 }
@@ -51,8 +51,8 @@ const Primary = () => {
 const Navigation = () => {
   return (
     <nav class='component-header-navigation'>
-      <Link to='/account' icon='-user' alt='Account'>Account</Link>
-      <Link to='/cart' icon='-shopping-cart' alt='Cart'>Cart</Link>
+      <Link to='/clickmart/account' icon='-user' alt='Account'>Account</Link>
+      <Link to='/clickmart/cart' icon='-shopping-cart' alt='Cart'>Cart</Link>
     </nav>
   )
 }
@@ -86,7 +86,7 @@ const Banner = () => {
 
   return (
     ref.vnode = <div class={classList} style={style} key='banner'>
-      <Link to='/subscribe'>Click Here to Subscribe to Our Price Drop Alerts!</Link>
+      <Link to='/clickmart/subscribe'>Click Here to Subscribe to Our Price Drop Alerts!</Link>
       <button onclick={toggleBanner}></button>
     </div>
   )

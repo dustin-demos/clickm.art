@@ -68,33 +68,25 @@ export const { getState, dispatch } = app({
     }
   },
   pages: {
-    '/': Home,
-    '/account': Account,
-    '/foobar': Foobar,
-    '/login': Login,
-    '/market': Market,
-    '/missing': Missing,
-    '/register': Register,
-    '/subscribe': Subscribe,
-    '/wholesale': Wholesale
+    // Served under /clickmart/ in the demos container, so routes carry that prefix.
+    '/clickmart/': Home,
+    '/clickmart/account': Account,
+    '/clickmart/foobar': Foobar,
+    '/clickmart/login': Login,
+    '/clickmart/market': Market,
+    '/clickmart/missing': Missing,
+    '/clickmart/register': Register,
+    '/clickmart/subscribe': Subscribe,
+    '/clickmart/wholesale': Wholesale
   },
   rewrites: [
     {
-      source: /^\/department/,
-      destination: '/foobar'
+      source: /^\/clickmart\/department/,
+      destination: '/clickmart/foobar'
     },
     {
-      source: /^\/s$/,
-      destination: '/market'
-    },
-    {
-      source: () => {
-        const hostname = location.hostname
-        const pathname = location.pathname
-
-        return hostname === 'wholesale.clickm.art' && pathname === '/'
-      },
-      destination: '/wholesale'
+      source: /^\/clickmart\/s$/,
+      destination: '/clickmart/market'
     }
   ]
 })

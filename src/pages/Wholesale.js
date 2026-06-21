@@ -7,7 +7,7 @@ const Card = props => {
   return (
     <div>
       <div class={props.class}>{/* emnpty */}</div>
-      <Link to='/'>{props.label}</Link>
+      <Link to='/clickmart/'>{props.label}</Link>
     </div>
   )
 }

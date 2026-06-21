@@ -55,9 +55,9 @@ const Bottom = () => {
   return (
     <div class='component-footer-bottom'>
       <div>©2021 Clickmart LLC</div>
-      <Link to='/terms-of-use'>Terms of Use</Link>
-      <Link to='/privacy-policy'>Privacy Policy</Link>
-      <Link to='/cookie-policy'>Cookie Policy</Link>
+      <Link to='/clickmart/terms-of-use'>Terms of Use</Link>
+      <Link to='/clickmart/privacy-policy'>Privacy Policy</Link>
+      <Link to='/clickmart/cookie-policy'>Cookie Policy</Link>
     </div>
   )
 }
