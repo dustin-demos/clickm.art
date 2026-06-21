@@ -19,6 +19,8 @@ const common = {
     'process.env.DEV': development,
     'process.env.PROD': production,
     'process.env.YEAR': year,
+    // Dependencies branch on NODE_ENV; define it so no bare `process` reaches the browser.
+    'process.env.NODE_ENV': JSON.stringify(production ? 'production' : 'development'),
 
     'APP_DEV': development,
     'APP_PROD': production,
