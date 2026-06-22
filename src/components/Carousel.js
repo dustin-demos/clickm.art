@@ -27,7 +27,8 @@ const slides = [
 ]
 
 const Card = (props, children) => {
-  const style = `background: url('${props.image}') center / cover;`
+  // Images use root-absolute paths; prefix the subpath the demo is served under.
+  const style = `background: url('/clickmart${props.image}') center / cover;`
 
   return (
     <div>

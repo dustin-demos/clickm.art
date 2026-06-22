@@ -19,7 +19,8 @@ const add = () => {
  */
 
 const Product = (props, children) => {
-  const style = `background: url('${props.images[0]}') center / contain no-repeat;`
+  // Images use root-absolute paths; prefix the subpath the demo is served under.
+  const style = `background: url('/clickmart${props.images[0]}') center / contain no-repeat;`
 
   return (
     <div class='component-collection-product'>

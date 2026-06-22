@@ -17,8 +17,7 @@ export default (props, children) => state => {
         <Footer/>
       </div>
       <Sidebar/>
-      {/* {process.env.DEV && <Panel/>} */}
-      <Panel/>
+      {process.env.DEV && <Panel/>}
     </div>
   )
 }

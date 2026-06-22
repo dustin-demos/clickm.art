@@ -74,7 +74,7 @@ export const { getState, dispatch } = app({
     '/clickmart/foobar': Foobar,
     '/clickmart/login': Login,
     '/clickmart/market': Market,
-    '/clickmart/missing': Missing,
+    '/missing': Missing,
     '/clickmart/register': Register,
     '/clickmart/subscribe': Subscribe,
     '/clickmart/wholesale': Wholesale

@@ -7,7 +7,7 @@
   "dependencies": {
     "@tabler/icons": "^1.41.2",
     "classcat": "^5.0.3",
-    "pocket": "git+https://github.com/dustin-archive/pocket-2021.git",
+    "pocket": "git+https://github.com/dustin-archive/pocket-2021.git#394d4fe7d",
     "superfine": "^8.2.0",
     "superstatic": "git+https://github.com/dustin-archive/superstatic.git"
   },
