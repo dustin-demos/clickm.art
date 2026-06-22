@@ -28,7 +28,8 @@ const Home = (state, dispatch) => {
     <div class='page-home'>
       <div class='page-home-content'>
         <Carousel/>
-        <Advertisement/>
+        {/* Placeholder ad banner hidden for the demo; it was just a 1440x144 grey box. */}
+        {/* <Advertisement/> */}
         <Collection icon='-icon-ripple' category='Pool and Beach'/>
         <Collection icon='-icon-brand-apple-arcade' category='Gaming'/>
         <Collection icon='-icon-headset' category='PC Accessories'/>

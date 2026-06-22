@@ -26,6 +26,9 @@ $icon-login: ic-key(#fff);
   &.-carousel {
     border: 2px solid #fff;
     border-radius: 21px;
+    // Extra vertical breathing room so the Shop Now CTA is not cramped against its border.
+    padding-top: 8px;
+    padding-bottom: 8px;
     font: 16px/38px var(--font-inter);
     background: initial;
   }
